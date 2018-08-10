@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Windows Media Player
+MimeType=audio/x-ms-asx;
+Exec=env WINEPREFIX="/home/chansol/.wine" wine-stable start /ProgIDOpen WVXFile %f
+NoDisplay=true
+StartupNotify=true
+Icon=1C27_wmplayer.0

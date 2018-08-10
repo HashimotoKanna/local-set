@@ -1,0 +1,24 @@
+[MIME Cache]
+application/vnd.ms-asf=wine-extension-asf.desktop;
+application/vnd.ms-wpl=wine-extension-wpl.desktop;
+application/x-ms-wmd=wine-extension-wmd.desktop;
+application/x-ms-wmz=wine-extension-wmz.desktop;
+application/x-wine-extension-cda=wine-extension-cda.desktop;
+application/x-wine-extension-wms=wine-extension-wms.desktop;
+application/x-wonderswan-color-rom=wine-extension-wsc.desktop;
+audio/basic=wine-extension-au.desktop;
+audio/mid=wine-extension-rmi.desktop;
+audio/midi=wine-extension-mid.desktop;
+audio/mp2=wine-extension-mp2.desktop;
+audio/mpeg=wine-extension-mp3.desktop;
+audio/x-aifc=wine-extension-aifc.desktop;
+audio/x-aiff=wine-extension-aif.desktop;
+audio/x-mpegurl=wine-extension-m3u.desktop;
+audio/x-ms-asx=wine-extension-wvx.desktop;wine-extension-wax.desktop;wine-extension-asx.desktop;
+audio/x-ms-wma=wine-extension-wma.desktop;
+audio/x-wav=wine-extension-wav.desktop;
+text/scriptlet=wine-extension-sct.desktop;
+video/mpeg=wine-extension-m1v.desktop;
+video/x-ms-wm=wine-extension-wm.desktop;
+video/x-ms-wmv=wine-extension-wmv.desktop;
+video/x-msvideo=wine-extension-avi.desktop;

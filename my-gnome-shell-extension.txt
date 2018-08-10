@@ -1,0 +1,44 @@
+chrome-gnome-shell/bionic,bionic,bionic,bionic 10-1 all
+gnome-shell/bionic,bionic 3.28.1-0ubuntu2 amd64
+gnome-shell-common/bionic,bionic,bionic,bionic,now 3.28.1-0ubuntu2 all [installed]
+gnome-shell-extension-appindicator/bionic,bionic,bionic,bionic,now 18.04.1 all [installed]
+gnome-shell-extension-autohidetopbar/bionic,bionic,bionic,bionic 20171126-2 all
+gnome-shell-extension-better-volume/bionic,bionic,bionic,bionic 0.0-git20170425.1a66fab-1 all
+gnome-shell-extension-caffeine/bionic,bionic,bionic,bionic 0~git20171229-2 all
+gnome-shell-extension-dash-to-panel/bionic,bionic,bionic,bionic 13-1 all
+gnome-shell-extension-dashtodock/bionic,bionic,bionic,bionic 63-1 all
+gnome-shell-extension-disconnect-wifi/bionic,bionic,bionic,bionic 17-2 all
+gnome-shell-extension-hard-disk-led/bionic,bionic,bionic,bionic 19-1 all
+gnome-shell-extension-hide-activities/bionic,bionic,bionic,bionic 0.00~git20131024.1.6574986-1 all
+gnome-shell-extension-hide-veth/bionic,bionic,bionic,bionic 1.0.2-1 all
+gnome-shell-extension-impatience/bionic,bionic,bionic,bionic 0.4.5-3 all
+gnome-shell-extension-log-out-button/bionic,bionic,bionic,bionic 1.0.7-1 all
+gnome-shell-extension-mediaplayer/bionic,bionic,bionic,bionic 3.5-3 all
+gnome-shell-extension-move-clock/bionic,bionic,bionic,bionic 1.01-1 all
+gnome-shell-extension-multi-monitors/bionic,bionic,bionic,bionic 0.00~git20171014.1.df5d6e4-1 all
+gnome-shell-extension-no-annoyance/bionic,bionic,bionic,bionic 0+20170928-f21d09a-1 all
+gnome-shell-extension-onboard/bionic,bionic,bionic,bionic 1.4.1-2ubuntu1 all
+gnome-shell-extension-pixelsaver/bionic,bionic,bionic,bionic 1.10+git20161217-49f47bf-1 all
+gnome-shell-extension-redshift/bionic,bionic,bionic,bionic 3.20.1-2 all
+gnome-shell-extension-remove-dropdown-arrows/bionic,bionic,bionic,bionic 9-1 all
+gnome-shell-extension-shortcuts/bionic,bionic,bionic,bionic 1.1.1-1 all
+gnome-shell-extension-show-ip/bionic,bionic,bionic,bionic 8-3 all
+gnome-shell-extension-suspend-button/bionic,bionic,bionic,bionic 0~git20171025-2 all
+gnome-shell-extension-system-monitor/bionic,bionic,bionic,bionic 35-1 all
+gnome-shell-extension-taskbar/bionic,bionic,bionic,bionic 57.0-1 all
+gnome-shell-extension-tilix-dropdown/bionic,bionic,bionic,bionic 5.1-1 all
+gnome-shell-extension-tilix-shortcut/bionic,bionic,bionic,bionic 1.0.1-2 all
+gnome-shell-extension-top-icons-plus/bionic,bionic,bionic,bionic 21-3 all
+gnome-shell-extension-trash/bionic,bionic,bionic,bionic 0.2.0-git20161122.ad29112-1 all
+gnome-shell-extension-ubuntu-dock/bionic,bionic,bionic,bionic,now 0.9.1 all [installed]
+gnome-shell-extension-weather/bionic,bionic,bionic,bionic 0~20170402.git34506a6-1 all
+gnome-shell-extension-workspaces-to-dock/bionic,bionic,bionic,bionic 44-1 all
+gnome-shell-extensions/bionic,bionic,bionic,bionic 3.28.0-2 all
+gnome-shell-extensions-gpaste/bionic,bionic,bionic,bionic 3.28.0-2 all
+gnome-shell-mailnag/bionic,bionic 3.26.0-1 amd64
+gnome-shell-pomodoro/bionic,bionic 0.13.4-2 amd64
+gnome-shell-pomodoro-data/bionic,bionic,bionic,bionic 0.13.4-2 all
+gnome-shell-timer/bionic,bionic,bionic,bionic 0.3.20+20171025-2 all
+octave-zenity/bionic,bionic,bionic,bionic 0.5.7-8 all
+zenity/bionic,bionic 3.28.1-1 amd64
+zenity-common/bionic,bionic,bionic,bionic,now 3.28.1-1 all [installed]
