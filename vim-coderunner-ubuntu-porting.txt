@@ -1,0 +1,63 @@
+compiler/include <-- /usr/include (replace all)
+compiler/bin/clang <-- /usr/bin/clang (replace)
+compiler/bin/ld <-- /usr/bin/ld (replace)
+
+
+
+diff --git a/vim-coderunner/compiler/c.sh b/home/chansol/.vim/bundle/vim-coderunner/compiler/c.sh
+index 32462db..b7ad34d 100755
+--- a/vim-coderunner/compiler/c.sh
++++ b/home/chansol/.vim/bundle/vim-coderunner/compiler/c.sh
+@@ -26,9 +26,9 @@ CR_DEVELOPER_DIR=`dirname "$0"`
+ ## END
+ 
+ lion=false
+-if [ `sw_vers -productVersion | awk -F '.' '{print $1 "." $2}'` = "10.7" ]; then
+-	lion=true
+-fi
++#if [ `sw_vers -productVersion | awk -F '.' '{print $1 "." $2}'` = "10.7" ]; then
++	#lion=true
++#fi
+ 
+ out=`echo "$CR_FILENAME" | sed 's/\(.*\)\..*/\1/'`
+ if [ -d "$out" ]; then
+
+
+
+
+diff --git a/vim-coderunner/compiler/cpp.sh b/home/chansol/.vim/bundle/vim-coderunner/compiler/cpp.sh
+index c004334..f217e61 100755
+--- a/vim-coderunner/compiler/cpp.sh
++++ b/home/chansol/.vim/bundle/vim-coderunner/compiler/cpp.sh
+@@ -26,9 +26,9 @@ CR_DEVELOPER_DIR=`dirname "$0"`
+ ## END
+ 
+ lion=false
+-if [ `sw_vers -productVersion | awk -F '.' '{print $1 "." $2}'` = "10.7" ]; then
+-	lion=true
+-fi
++#if [ `sw_vers -productVersion | awk -F '.' '{print $1 "." $2}'` = "10.7" ]; then
++	#lion=true
++#fi
+ 
+ out=`echo "$CR_FILENAME" | sed 's/\(.*\)\..*/\1/'`
+ if [ -d "$out" ]; then
+@@ -84,14 +84,16 @@ if [ $noxcode = false ]; then
+ 		if [ $? -eq 69 ] && [ $lion = false ]; then
+ 			noxcode=true
+ 		else
+-			xcrun clang++ -x c++ -lc++ -o "$out" "${files[@]}" "${@:1}"
++			#xcrun clang++ -x c++ -lc++ -o "$out" "${files[@]}" "${@:1}"
++			xcrun clang++ -x c++ -lstdc++ -o "$out" "${files[@]}" "${@:1}"
+ 			status=$?
+ 		fi
+ 	fi
+ fi
+ if [ $noxcode = true ]; then
+ 	# Xcode not installed
+-	"$CR_DEVELOPER_DIR/bin/clang" -x c++ -lc++ -o "$out" "${files[@]}" "-I$CR_DEVELOPER_DIR/include" "-I$CR_DEVELOPER_DIR/lib/clang/6.0/include" "-I$CR_DEVELOPER_DIR/include/c++/v1" "${@:1}"
++	"$CR_DEVELOPER_DIR/bin/clang" -x c++ -lstdc++ -o "$out" "${files[@]}" "-I$CR_DEVELOPER_DIR/include" "-I$CR_DEVELOPER_DIR/lib/clang/6.0/include" "-I$CR_DEVELOPER_DIR/include/c++/v1" "${@:1}"
++	#"$CR_DEVELOPER_DIR/bin/clang" -x c++ -lc++ -o "$out" "${files[@]}" "-I$CR_DEVELOPER_DIR/include" "-I$CR_DEVELOPER_DIR/lib/clang/6.0/include" "-I$CR_DEVELOPER_DIR/include/c++/v1" "${@:1}"
+ 	status=$?
+ fi
+ 

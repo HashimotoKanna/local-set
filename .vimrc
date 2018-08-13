@@ -12,7 +12,7 @@
 color elflord_customizing
 
 " my vim settings
-set termguicolors
+"set termguicolors
 syntax on
 set hlsearch
 set ignorecase
