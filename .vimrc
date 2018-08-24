@@ -11,8 +11,14 @@
 "color elflord  
 color elflord_customizing
 
+" tab window settings
+set switchbuf=usetab
+nnoremap <F8> :tabn<CR>
+nnoremap <F9> :tabp<CR>
+
+
 " my vim settings
-"set termguicolors
+" set termguicolors
 syntax on
 set hlsearch
 set ignorecase
@@ -25,9 +31,16 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 map <C-a> <esc>ggVG<CR>
+map <F2> :w<CR><leader>r<CR>
+map <F3> :pclose<CR>
+map <F4> :w<CR>:so %<CR>
+map <F6> :wq<CR>
+map <F7> :wqa<CR>
+map <C-l> :vsp ~/.vimrc<CR>
 
 " bottom bar theme
 let g:airline_theme='simple'
+nnoremap <silent> <C-b> :AirlineToggle<CR>
 
 " my alias
 cnoreabbrev install PluginInstall
@@ -37,20 +50,30 @@ cnoreabbrev vbash ConqueTermVSplit bash
 cnoreabbrev plist PluginList
 
 " indent line settings
-let g:indentLine_color_term = 239
+let g:indentLine_color_term = 20
 let g:indentLine_color_gui = '#A4E57E'
 let g:indentLine_color_tty_light = 7 " (default: 4)
-let g:indentLine_color_dark = 1 " (default: 2)
-let g:indentLine_bgcolor_term = 202
+"let g:indentLine_color_dark = 1 " (default: 2)
+"let g:indentLine_bgcolor_term = 202
+"let g:indentLine_bgcolor_term = 20
 
 " NERDTree settings
 let NERDTreeShowHidden=1
+nnoremap <silent> <C-p> :NERDTreeToggle<CR>
+
+" coderunner settings
+"let g:vcr_languages["py"] = g:vcr_languages["python"]
+"let g:vcr_languages["python"] = {
+            "\"cmd": "/usr/bin/python3"
+"            \}
 
 " Codi settings
 let g:codi#rightalign=0
 let g:codi#width=40
 "let g:codi#interpreters = {'javascript': {
 "                       \ 'bin': 'nodejs',},}
+let g:codi#interpreters = {'python': {
+                       \ 'bin': 'python3',},}
 let g:codi#aliases = {'javascript.jsx': 'javascript'}
 
 " Syntax Checker recommended settings
@@ -61,6 +84,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+nnoremap <silent> <C-d> :lclose<CR>
+cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdelete' : 'bd')<CR>
 
 " ---------------------------------------------------------------
 
@@ -116,7 +141,7 @@ Plugin 'yggdroot/indentline'
 " <leader> : default back slash
 Plugin '0x84/vim-coderunner'
 " syntax checker
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
 
 
 
