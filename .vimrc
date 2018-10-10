@@ -9,16 +9,30 @@
 "color base16/base16-bright
 "color default  
 "color elflord  
-color elflord_customizing
+"color elflord_customizing
+"color Tomorrow-Night-Bright
+"color Tomorrow-Night
+"color darkblue
+"color industry
+color industry_t
+"color torte
+"color evening
+"color evening_customizing
+"color tm/Tomorrow-Night-Bright
 
 " tab window settings
 set switchbuf=usetab
-nnoremap <F8> :tabn<CR>
+nnoremap <F10> :tabn<CR>
 nnoremap <F9> :tabp<CR>
 
 
 " my vim settings
 " set termguicolors
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
 syntax on
 set hlsearch
 set ignorecase
@@ -31,15 +45,18 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 map <C-a> <esc>ggVG<CR>
+map <F1> :w<CR>
 map <F2> :w<CR><leader>r<CR>
-map <F3> :pclose<CR>
-map <F4> :w<CR>:so %<CR>
+map <F3> :w<CR>:so %<CR>
+map <F4> :q<CR>
+map <F5> :qa<CR>
 map <F6> :wq<CR>
 map <F7> :wqa<CR>
 map <C-l> :vsp ~/.vimrc<CR>
+map <C-i> :vbash<CR>
 
 " bottom bar theme
-let g:airline_theme='simple'
+"let g:airline_theme='simple'
 nnoremap <silent> <C-b> :AirlineToggle<CR>
 
 " my alias
@@ -47,7 +64,7 @@ cnoreabbrev install PluginInstall
 cnoreabbrev dir NERDTree
 cnoreabbrev bash ConqueTermSplit bash
 cnoreabbrev vbash ConqueTermVSplit bash
-cnoreabbrev plist PluginList
+cnoreabbrev list PluginList
 
 " indent line settings
 let g:indentLine_color_term = 20
@@ -143,7 +160,7 @@ Plugin '0x84/vim-coderunner'
 " syntax checker
 "Plugin 'vim-syntastic/syntastic'
 
-
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
