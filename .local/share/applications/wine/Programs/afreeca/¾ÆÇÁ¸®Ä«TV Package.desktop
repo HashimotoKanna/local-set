@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=¾ÆÇÁ¸®Ä«TV Package
-Exec=env WINEPREFIX="/home/chansol/.wine" wine-stable C:\\\\windows\\\\command\\\\start.exe /Unix /home/chansol/.wine/dosdevices/c:/users/chansol/Start\\ Menu/Programs/afreeca/¾ÆÇÁ¸®Ä«TV\\ Package.lnk
-Type=Application
-StartupNotify=true
-Path=/home/chansol/.wine/dosdevices/c:/users/chansol/Start Menu/Programs/afreeca
-Icon=03FD_afreecatvpackage.0
-StartupWMClass=afreecatvpackage.exe

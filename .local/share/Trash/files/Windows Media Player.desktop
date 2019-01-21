@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Windows Media Player
-Exec=env WINEPREFIX="/home/chansol/.wine" wine-stable C:\\\\PROG\\~FBU\\\\WIND\\~ATD\\\\wmplayer.exe 
-Type=Application
-StartupNotify=true
-Comment=Plays your digital media including music, videos, CDs, and Internet Radio.
-Icon=EE61_wmplayer.0
-StartupWMClass=wmplayer.exe

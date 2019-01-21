@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Windows Media Player
-MimeType=audio/x-wav;
-Exec=env WINEPREFIX="/home/chansol/.wine" wine-stable start /ProgIDOpen soundrec %f
-NoDisplay=true
-StartupNotify=true
-Icon=1C27_wmplayer.0

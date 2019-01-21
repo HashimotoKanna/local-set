@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Windows Media Player
-MimeType=video/x-ms-wmv;
-Exec=env WINEPREFIX="/home/chansol/.wine" wine-stable start /ProgIDOpen WMVFile %f
-NoDisplay=true
-StartupNotify=true
-Icon=1C27_wmplayer.0
