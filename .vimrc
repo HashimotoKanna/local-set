@@ -49,6 +49,10 @@ syntax on
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
 hi Comment guifg=#000000 ctermfg=Magenta
+set t_Co=256
+set cursorline
+hi cursorline term=none cterm=none guibg=#303000 ctermbg=234
+"set cursorcolumn
 
 " srcexpl setting
 " // The switch of the Source Explorer
@@ -162,5 +166,6 @@ Plugin 'soramugi/auto-ctags.vim'
 Plugin 'wesleyche/srcexpl'
 Plugin 'taglist.vim'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+Plugin 'miyakogi/conoline.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required

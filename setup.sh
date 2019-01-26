@@ -8,7 +8,10 @@ sudo apt install zsh
 # change default shell as zsh
 chsh -s $(which zsh)
 # install zsh-antigen (zsh package manage)
-curl -L git.io/antigen > $HOME/antigen.zsh
+CMD_INSTALL_ANTIGEN="[ ! -f $HOME/antigen.zsh] && curl -L git.io/antigen > $HOME/antigen.zsh"
+echo "# install antigen."
+echo $CMD_INSTALL_ANTIGEN >> $HOME/.zshrc
+$CMD_INSTALL_ANTIGEN
 CMD_SOURCE_ANTIGEN="source $HOME/antigen.zsh"
 echo "# source antigen." >> $HOME/.zshrc
 echo $CMD_SOURCE_ANTIGEN >> $HOME/.zshrc
