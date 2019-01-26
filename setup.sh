@@ -1,25 +1,24 @@
 #!/bin/bash
 
-# update package list
-sudo apt update
-# update package
-sudo apt upgrade
+# update package list and update package
+sudo apt update && sudo apt upgrade -y
 
 # install zsh
 sudo apt install zsh
 # change default shell as zsh
 chsh -s $(which zsh)
 # install zsh-antigen (zsh package manage)
-sudo apt install zsh-antigen
-PATH_ANTIGEN=`sudo find / -name antigen.zsh 2> /dev/null | awk 'NR==1'`
-CMD_SOURCE_ANTIGEN="source $PATH_ANTIGEN"
+curl -L git.io/antigen > $HOME/antigen.zsh
+CMD_SOURCE_ANTIGEN="source $HOME/antigen.zsh"
+echo "# source antigen." >> $HOME/.zshrc
 echo $CMD_SOURCE_ANTIGEN >> $HOME/.zshrc
 $CMD_SOURCE_ANTIGEN
 # set .zshrc
 echo "# Load the oh-my-zsh's library." >> $HOME/.zshrc
 echo "antigen use oh-my-zsh" >> $HOME/.zshrc
 echo "# Load the theme" >> $HOME/.zshrc
-echo "antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship" >> $HOME/.zshrc
+echo "# antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship" >> $HOME/.zshrc
+echo "npm install -g spaceship-prompt" >> $HOME/.zshrc
 echo "# Bundles from the default repo (robbyrussell's oh-my-zsh)." >> $HOME/.zshrc
 echo "antigen bundle git" >> $HOME/.zshrc
 echo "antigen bundle heroku" >> $HOME/.zshrc
