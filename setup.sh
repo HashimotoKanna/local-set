@@ -8,7 +8,7 @@ sudo apt install zsh
 # change default shell as zsh
 chsh -s $(which zsh)
 # install zsh-antigen (zsh package manage)
-CMD_INSTALL_ANTIGEN="[ ! -f $HOME/antigen.zsh] && curl -L git.io/antigen > $HOME/antigen.zsh"
+CMD_INSTALL_ANTIGEN="[ ! -f $HOME/antigen.zsh ] && curl -L git.io/antigen > $HOME/antigen.zsh"
 echo "# install antigen."
 echo $CMD_INSTALL_ANTIGEN >> $HOME/.zshrc
 $CMD_INSTALL_ANTIGEN
@@ -17,15 +17,14 @@ echo "# source antigen." >> $HOME/.zshrc
 echo $CMD_SOURCE_ANTIGEN >> $HOME/.zshrc
 $CMD_SOURCE_ANTIGEN
 # set .zshrc
+npm install -g spaceship-prompt
 echo "# Load the oh-my-zsh's library." >> $HOME/.zshrc
 echo "antigen use oh-my-zsh" >> $HOME/.zshrc
 echo "# Load the theme" >> $HOME/.zshrc
 echo "# antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship" >> $HOME/.zshrc
-echo "npm install -g spaceship-prompt" >> $HOME/.zshrc
 echo "# Bundles from the default repo (robbyrussell's oh-my-zsh)." >> $HOME/.zshrc
-echo "antigen bundle git" >> $HOME/.zshrc
+echo "antigen bundle zsh-users/zsh-autosuggestions" >> $HOME/.zshrc
 echo "antigen bundle heroku" >> $HOME/.zshrc
-echo "antigen bundle pip" >> $HOME/.zshrc
 echo "antigen bundle lein" >> $HOME/.zshrc
 echo "antigen bundle command-not-found" >> $HOME/.zshrc
 echo "antigen bundle autojump" >> $HOME/.zshrc
@@ -33,11 +32,7 @@ echo "antigen bundle common-aliases" >> $HOME/.zshrc
 echo "antigen bundle compleat" >> $HOME/.zshrc
 echo "antigen bundle git-extras" >> $HOME/.zshrc
 echo "antigen bundle git-flow" >> $HOME/.zshrc
-echo "antigen bundle npm" >> $HOME/.zshrc
-echo "antigen bundle web-search" >> $HOME/.zshrc
 echo "antigen bundle z" >> $HOME/.zshrc
-echo "antigen bundle zsh-users/zsh-synt" >> $HOME/.zshrcax-highlighting
-echo "antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh" >> $HOME/.zshrc
 echo "# NVM bundle" >> $HOME/.zshrc
 echo "export NVM_LAZY_LOAD=true" >> $HOME/.zshrc
 echo "antigen bundle lukechilds/zsh-nvm" >> $HOME/.zshrc
@@ -46,8 +41,6 @@ echo "# Syntax highlighting bundle." >> $HOME/.zshrc
 echo "antigen bundle zsh-users/zsh-syntax-highlighti" >> $HOME/.zshrcng
 echo "# Tell Antigen that you're done." >> $HOME/.zshrc
 echo "antigen apply" >> $HOME/.zshrc
-echo "# Setup zsh-autosuggestions" >> $HOME/.zshrc
-echo "source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"" >> $HOME/.zshrc
 echo "# Load custom aliases" >> $HOME/.zshrc
 echo "[[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"" >> $HOME/.zshrc
 echo "# ZSH_THEME="dst"" >> $HOME/.zshrc
@@ -99,6 +92,8 @@ sudo apt install tmux
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # set vim configuration
 [ -f $HOME/.vimrc] && cat dotfiles/.vimrc >> ~/.vimrc || cp dotfiles/.vimrc ~/.vimrc
+# download jellybean awesome color theme
+curl https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim -o ~/.vim/colors/jellysbeans.vim --create-dir
 
 # install gdb
 sudo apt install gdb
@@ -109,10 +104,15 @@ git clone https://github.com/pwndbg/pwndbg && cd pwndbg && ./setup.sh && cd ..
 # set gdb configuration
 [ -f $HOME/.gdbinit] && cat dotfiles/.gdbinit >> ~/.gdbinit || cp dotfiles/.gdbinit ~/.gdbinit
 
+# install nvm
+LATEST_NODE=`nvm ls-remote | tail -n 1`
+nvm install $LATEST_NODE
+nvm default $LATEST_NODE
+
 # install brew (linux wrapper)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
-brew install bat
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+#test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+#test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+#test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+#echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+#brew install bat

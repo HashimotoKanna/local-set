@@ -1,5 +1,5 @@
 " vim theme
-color onehalfdark
+color jellybeans
 
 " ctags setting
 "set tags=tags
