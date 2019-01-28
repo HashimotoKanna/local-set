@@ -17,7 +17,7 @@ echo "# source antigen." >> $HOME/.zshrc
 echo $CMD_SOURCE_ANTIGEN >> $HOME/.zshrc
 $CMD_SOURCE_ANTIGEN
 # set .zshrc
-npm install -g spaceship-prompt
+sudo npm install -g spaceship-prompt
 echo "# Load the oh-my-zsh's library." >> $HOME/.zshrc
 echo "antigen use oh-my-zsh" >> $HOME/.zshrc
 echo "# Load the theme" >> $HOME/.zshrc
