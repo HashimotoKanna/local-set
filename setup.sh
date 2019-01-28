@@ -24,14 +24,6 @@ echo "# Load the theme" >> $HOME/.zshrc
 echo "# antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship" >> $HOME/.zshrc
 echo "# Bundles from the default repo (robbyrussell's oh-my-zsh)." >> $HOME/.zshrc
 echo "antigen bundle zsh-users/zsh-autosuggestions" >> $HOME/.zshrc
-echo "antigen bundle heroku" >> $HOME/.zshrc
-echo "antigen bundle lein" >> $HOME/.zshrc
-echo "antigen bundle command-not-found" >> $HOME/.zshrc
-echo "antigen bundle autojump" >> $HOME/.zshrc
-echo "antigen bundle common-aliases" >> $HOME/.zshrc
-echo "antigen bundle compleat" >> $HOME/.zshrc
-echo "antigen bundle git-extras" >> $HOME/.zshrc
-echo "antigen bundle git-flow" >> $HOME/.zshrc
 echo "antigen bundle z" >> $HOME/.zshrc
 echo "# NVM bundle" >> $HOME/.zshrc
 echo "export NVM_LAZY_LOAD=true" >> $HOME/.zshrc
@@ -48,16 +40,9 @@ echo "# ZSH_THEME="dst"" >> $HOME/.zshrc
 echo "#ZSH_THEME="dst"" >> $HOME/.zshrc
 echo "HIST_STAMPS="mm/dd/yyyy"" >> $HOME/.zshrc
 echo "plugins=(" >> $HOME/.zshrc
-echo "  git" >> $HOME/.zshrc
-echo "  web-search" >> $HOME/.zshrc
 echo "  colored-man-pages" >> $HOME/.zshrc
 echo "  colorize" >> $HOME/.zshrc
-echo "  command-not-found" >> $HOME/.zshrc
-echo "  #compleat" >> $HOME/.zshrc
-echo "  fbterm" >> $HOME/.zshrc
 echo "  battery" >> $HOME/.zshrc
-echo "  rand-quote" >> $HOME/.zshrc
-echo "  copydir" >> $HOME/.zshrc
 echo "  themes" >> $HOME/.zshrc
 echo ")" >> $HOME/.zshrc
 echo "# disable Software Flow Control (XON/XOFF flow control)" >> $HOME/.zshrc
@@ -69,8 +54,8 @@ echo "export NVM_DIR="$(realpath $HOME/.nvm)"" >> $HOME/.zshrc
 echo "[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm" >> $HOME/.zshrc
 echo "[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion" >> $HOME/.zshrc
 echo "#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!" >> $HOME/.zshrc
-echo "export SDKMAN_DIR="/home/kanna/.sdkman"" >> $HOME/.zshrc
-echo "[[ -s "/home/kanna/.sdkman/bin/sdkman-init.sh" ]] && source "/home/kanna/.sdkman/bin/sdkman-init.sh"" >> $HOME/.zshrc
+echo "#export SDKMAN_DIR="/home/kanna/.sdkman"" >> $HOME/.zshrc
+echo "#[[ -s "/home/kanna/.sdkman/bin/sdkman-init.sh" ]] && source "/home/kanna/.sdkman/bin/sdkman-init.sh"" >> $HOME/.zshrc
 
 # install git
 sudo apt install git
@@ -93,14 +78,16 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # set vim configuration
 [ -f $HOME/.vimrc] && cat dotfiles/.vimrc >> ~/.vimrc || cp dotfiles/.vimrc ~/.vimrc
 # download jellybean awesome color theme
-curl https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim -o ~/.vim/colors/jellysbeans.vim --create-dir
+curl https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim -o ~/.vim/colors/jellybeans.vim --create-dir
+# source .vimrc
+vim -c PluginInstall
 
 # install gdb
 sudo apt install gdb
 # install gdb gef
 wget -q -O- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | sh
 # install gdb pwndbg
-git clone https://github.com/pwndbg/pwndbg && cd pwndbg && ./setup.sh && cd ..
+# git clone https://github.com/pwndbg/pwndbg && cd pwndbg && ./setup.sh && cd ..
 # set gdb configuration
 [ -f $HOME/.gdbinit] && cat dotfiles/.gdbinit >> ~/.gdbinit || cp dotfiles/.gdbinit ~/.gdbinit
 
