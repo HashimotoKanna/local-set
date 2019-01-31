@@ -11,7 +11,7 @@ chsh -s $(which zsh)
 #CMD_INSTALL_ANTIGEN="[ ! -f $HOME/antigen.zsh ] && curl -L git.io/antigen > $HOME/antigen.zsh"
 echo "# install antigen."
 if [ ! -f $HOME/antigen.zsh ]; then
-    git.io/antigen > $HOME/antigen.zsh
+    curl -L git.io/antigen > $HOME/antigen.zsh
 fi
 #echo $CMD_INSTALL_ANTIGEN >> $HOME/.zshrc
 #$CMD_INSTALL_ANTIGEN
