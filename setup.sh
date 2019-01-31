@@ -20,7 +20,7 @@ echo "# source antigen." >> $HOME/.zshrc
 echo $CMD_SOURCE_ANTIGEN >> $HOME/.zshrc
 #$CMD_SOURCE_ANTIGEN
 # set .zshrc
-sudo npm install -g spaceship-prompt
+#sudo npm install -g spaceship-prompt
 echo "# Load the oh-my-zsh's library." >> $HOME/.zshrc
 echo "antigen use oh-my-zsh" >> $HOME/.zshrc
 echo "# Load the theme" >> $HOME/.zshrc
@@ -83,7 +83,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # download jellybean awesome color theme
 curl https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim -o ~/.vim/colors/jellybeans.vim --create-dir
 # source .vimrc
-vim -c PluginInstall
+#vim -c PluginInstall
 
 # install gdb
 sudo apt install gdb
