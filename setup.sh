@@ -8,10 +8,13 @@ sudo apt install zsh
 # change default shell as zsh
 chsh -s $(which zsh)
 # install zsh-antigen (zsh package manage)
-CMD_INSTALL_ANTIGEN="[ ! -f $HOME/antigen.zsh ] && curl -L git.io/antigen > $HOME/antigen.zsh"
+#CMD_INSTALL_ANTIGEN="[ ! -f $HOME/antigen.zsh ] && curl -L git.io/antigen > $HOME/antigen.zsh"
 echo "# install antigen."
-echo $CMD_INSTALL_ANTIGEN >> $HOME/.zshrc
-$CMD_INSTALL_ANTIGEN
+if [ ! -f $HOME/antigen.zsh ]; then
+    git.io/antigen > $HOME/antigen.zsh
+fi
+#echo $CMD_INSTALL_ANTIGEN >> $HOME/.zshrc
+#$CMD_INSTALL_ANTIGEN
 CMD_SOURCE_ANTIGEN="source $HOME/antigen.zsh"
 echo "# source antigen." >> $HOME/.zshrc
 echo $CMD_SOURCE_ANTIGEN >> $HOME/.zshrc
@@ -92,9 +95,9 @@ wget -q -O- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | sh
 [ -f $HOME/.gdbinit] && cat dotfiles/.gdbinit >> ~/.gdbinit || cp dotfiles/.gdbinit ~/.gdbinit
 
 # install nvm
-LATEST_NODE=`nvm ls-remote | tail -n 1`
-nvm install $LATEST_NODE
-nvm default $LATEST_NODE
+#LATEST_NODE=`nvm ls-remote | tail -n 1`
+#nvm install $LATEST_NODE
+#nvm default $LATEST_NODE
 
 # install brew (linux wrapper)
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"

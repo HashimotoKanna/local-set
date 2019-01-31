@@ -145,7 +145,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'pangloss/vim-javascript'
 "Plugin 'mxw/vim-jsx'
 "Plugin 'othree/javascript-libraries-syntax.vim'
