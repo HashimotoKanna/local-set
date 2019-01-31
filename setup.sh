@@ -18,7 +18,7 @@ fi
 CMD_SOURCE_ANTIGEN="source $HOME/antigen.zsh"
 echo "# source antigen." >> $HOME/.zshrc
 echo $CMD_SOURCE_ANTIGEN >> $HOME/.zshrc
-$CMD_SOURCE_ANTIGEN
+#$CMD_SOURCE_ANTIGEN
 # set .zshrc
 sudo npm install -g spaceship-prompt
 echo "# Load the oh-my-zsh's library." >> $HOME/.zshrc
@@ -65,21 +65,21 @@ sudo apt install git
 # get dotfiles
 git clone https://github.com/aplgz/dotfiles
 # set git configuration
-[ -f $HOME/.gitconfig] && cat dotfiles/.gitconfig >> ~/.gitconfig || cp dotfiles/.gitconfig ~/.gitconfig
-[ -f $HOME/.gitignore] && cat dotfiles/.gitignore >> ~/.gitignore || cp dotfiles/.gitignore ~/.gitignore
+[ -f $HOME/.gitconfig ] && cat dotfiles/.gitconfig >> ~/.gitconfig || cp dotfiles/.gitconfig ~/.gitconfig
+[ -f $HOME/.gitignore ] && cat dotfiles/.gitignore >> ~/.gitignore || cp dotfiles/.gitignore ~/.gitignore
 
 # set alias
-[ -f $HOME/.bash_aliases] && cat dotfiles/.bash_aliases >> ~/.bash_aliases || cp dotfiles/.bash_aliases ~/.bash_aliases
+[ -f $HOME/.bash_aliases ] && cat dotfiles/.bash_aliases >> ~/.bash_aliases || cp dotfiles/.bash_aliases ~/.bash_aliases
 
 # install tmux
 sudo apt install tmux
 # set tmux configuration
-[ -f $HOME/.tmux.conf] && cat dotfiles/.tmux.conf >> ~/.tmux.conf || cp dotfiles/.tmux.conf ~/.tmux.conf
+[ -f $HOME/.tmux.conf ] && cat dotfiles/.tmux.conf >> ~/.tmux.conf || cp dotfiles/.tmux.conf ~/.tmux.conf
 
 # install vim Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # set vim configuration
-[ -f $HOME/.vimrc] && cat dotfiles/.vimrc >> ~/.vimrc || cp dotfiles/.vimrc ~/.vimrc
+[ -f $HOME/.vimrc ] && cat dotfiles/.vimrc >> ~/.vimrc || cp dotfiles/.vimrc ~/.vimrc
 # download jellybean awesome color theme
 curl https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim -o ~/.vim/colors/jellybeans.vim --create-dir
 # source .vimrc
@@ -92,7 +92,7 @@ wget -q -O- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | sh
 # install gdb pwndbg
 # git clone https://github.com/pwndbg/pwndbg && cd pwndbg && ./setup.sh && cd ..
 # set gdb configuration
-[ -f $HOME/.gdbinit] && cat dotfiles/.gdbinit >> ~/.gdbinit || cp dotfiles/.gdbinit ~/.gdbinit
+[ -f $HOME/.gdbinit ] && cat dotfiles/.gdbinit >> ~/.gdbinit || cp dotfiles/.gdbinit ~/.gdbinit
 
 # install nvm
 #LATEST_NODE=`nvm ls-remote | tail -n 1`
