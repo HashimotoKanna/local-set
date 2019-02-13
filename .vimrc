@@ -1,5 +1,5 @@
 " vim theme
-color onehalfdark
+color jellybeans
 
 " ctags setting
 "set tags=tags
@@ -49,6 +49,10 @@ syntax on
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
 hi Comment guifg=#000000 ctermfg=Magenta
+set t_Co=256
+set cursorline
+hi cursorline term=none cterm=none guibg=#303000 ctermbg=234
+"set cursorcolumn
 
 " srcexpl setting
 " // The switch of the Source Explorer
@@ -138,29 +142,30 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'ascenator/L9', {'name': 'newL9'}
+"Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'myhere/vim-nodejs-complete'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'mxw/vim-jsx'
+"Plugin 'othree/javascript-libraries-syntax.vim'
+"Plugin 'myhere/vim-nodejs-complete'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'yggdroot/indentline'
 " code runner - usage:<leader>r
-Plugin '0x84/vim-coderunner'
+"Plugin '0x84/vim-coderunner'
 " syntax checker
 "Plugin 'vim-syntastic/syntastic'
-Plugin 'chriskempson/base16-vim'
+"Plugin 'chriskempson/base16-vim'
 Plugin 'tpope/vim-surround'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-Plugin 'universal-ctags/ctags'
-Plugin 'soramugi/auto-ctags.vim'
-Plugin 'wesleyche/srcexpl'
-Plugin 'taglist.vim'
+"Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+"Plugin 'universal-ctags/ctags'
+"Plugin 'soramugi/auto-ctags.vim'
+"Plugin 'wesleyche/srcexpl'
+"Plugin 'taglist.vim'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+Plugin 'miyakogi/conoline.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
