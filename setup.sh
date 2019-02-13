@@ -1,12 +1,20 @@
 #!/bin/bash
 
 # update package list and update package
+echo "#######################################################"
+echo "# update and upgrade ubuntu packages                  #"
+echo "#######################################################"
 sudo apt update && sudo apt upgrade -y
 
-# install zsh
-sudo apt install zsh
-# change default shell as zsh
-chsh -s $(which zsh)
+# install zsh and change default shell as zsh
+echo "#######################################################"
+echo "# install zsh and change shell as zsh                 #"
+echo "#######################################################"
+sudo apt install zsh -y && chsh -s $(which zsh)
+# install oh-my-zsh
+echo "#######################################################"
+echo "# install oh-my-zsh                                   #"
+echo "#######################################################"
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 #echo "# Load custom aliases" >> $HOME/.zshrc
