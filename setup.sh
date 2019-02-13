@@ -64,6 +64,7 @@ echo "  battery" >> $HOME/.zshrc
 echo "  rand-quote" >> $HOME/.zshrc
 echo "  copydir" >> $HOME/.zshrc
 echo "  themes" >> $HOME/.zshrc
+echo "  z" >> $HOME/.zshrc
 echo ")" >> $HOME/.zshrc
 echo "# disable Software Flow Control (XON/XOFF flow control)" >> $HOME/.zshrc
 echo "stty -ixon" >> $HOME/.zshrc
