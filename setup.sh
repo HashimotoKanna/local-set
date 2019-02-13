@@ -9,52 +9,21 @@ sudo apt install zsh
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-
-# install zsh-antigen (zsh package manage)
-#CMD_INSTALL_ANTIGEN="[ ! -f $HOME/antigen.zsh ] && curl -L git.io/antigen > $HOME/antigen.zsh"
-#echo "# install antigen."
-#if [ ! -f $HOME/antigen.zsh ]; then
-    #curl -L git.io/antigen > $HOME/antigen.zsh
-#fi
-##echo $CMD_INSTALL_ANTIGEN >> $HOME/.zshrc
-##$CMD_INSTALL_ANTIGEN
-#CMD_SOURCE_ANTIGEN="source $HOME/antigen.zsh"
-#echo "# source antigen." >> $HOME/.zshrc
-#echo $CMD_SOURCE_ANTIGEN >> $HOME/.zshrc
-##$CMD_SOURCE_ANTIGEN
-## set .zshrc
-##sudo npm install -g spaceship-prompt
-#echo "# Load the oh-my-zsh's library." >> $HOME/.zshrc
-#echo "antigen use oh-my-zsh" >> $HOME/.zshrc
-#echo "# Load the theme" >> $HOME/.zshrc
-#echo "# antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship" >> $HOME/.zshrc
-#echo "# Bundles from the default repo (robbyrussell's oh-my-zsh)." >> $HOME/.zshrc
-#echo "antigen bundle zsh-users/zsh-autosuggestions" >> $HOME/.zshrc
-#echo "antigen bundle z" >> $HOME/.zshrc
-#echo "# NVM bundle" >> $HOME/.zshrc
-#echo "export NVM_LAZY_LOAD=true" >> $HOME/.zshrc
-#echo "antigen bundle lukechilds/zsh-nvm" >> $HOME/.zshrc
-#echo "antigen bundle Sparragus/zsh-auto-nvm-use" >> $HOME/.zshrc
-#echo "# Syntax highlighting bundle." >> $HOME/.zshrc
-#echo "antigen bundle zsh-users/zsh-syntax-highlighti" >> $HOME/.zshrcng
-#echo "# Tell Antigen that you're done." >> $HOME/.zshrc
-#echo "antigen apply" >> $HOME/.zshrc
-
-echo "# Load custom aliases" >> $HOME/.zshrc
-echo "[[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"" >> $HOME/.zshrc
-echo " ZSH_THEME="dst"" >> $HOME/.zshrc
-echo "HIST_STAMPS="mm/dd/yyyy"" >> $HOME/.zshrc
-echo "plugins=(" >> $HOME/.zshrc
-echo "  colored-man-pages" >> $HOME/.zshrc
-echo "  colorize" >> $HOME/.zshrc
-echo "  battery" >> $HOME/.zshrc
-echo "  themes" >> $HOME/.zshrc
-echo "  z" >> $HOME/.zshrc
-echo ")" >> $HOME/.zshrc
-echo "# disable Software Flow Control (XON/XOFF flow control)" >> $HOME/.zshrc
-echo "stty -ixon" >> $HOME/.zshrc
-echo "# battery info" >> $HOME/.zshrc
-echo "RPROMPT='$(battery_pct_prompt)'" >> $HOME/.zshrc
+#echo "# Load custom aliases" >> $HOME/.zshrc
+#echo "[[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"" >> $HOME/.zshrc
+#echo " ZSH_THEME="dst"" >> $HOME/.zshrc
+#echo "HIST_STAMPS="mm/dd/yyyy"" >> $HOME/.zshrc
+#echo "plugins=(" >> $HOME/.zshrc
+#echo "  colored-man-pages" >> $HOME/.zshrc
+#echo "  colorize" >> $HOME/.zshrc
+#echo "  battery" >> $HOME/.zshrc
+#echo "  themes" >> $HOME/.zshrc
+#echo "  z" >> $HOME/.zshrc
+#echo ")" >> $HOME/.zshrc
+#echo "# disable Software Flow Control (XON/XOFF flow control)" >> $HOME/.zshrc
+#echo "stty -ixon" >> $HOME/.zshrc
+#echo "# battery info" >> $HOME/.zshrc
+#echo "RPROMPT='$(battery_pct_prompt)'" >> $HOME/.zshrc
 #echo "# Load NVM" >> $HOME/.zshrc
 #echo "export NVM_DIR="$(realpath $HOME/.nvm)"" >> $HOME/.zshrc
 #echo "[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm" >> $HOME/.zshrc
@@ -63,10 +32,6 @@ echo "RPROMPT='$(battery_pct_prompt)'" >> $HOME/.zshrc
 #echo "#export SDKMAN_DIR="/home/kanna/.sdkman"" >> $HOME/.zshrc
 #echo "#[[ -s "/home/kanna/.sdkman/bin/sdkman-init.sh" ]] && source "/home/kanna/.sdkman/bin/sdkman-init.sh"" >> $HOME/.zshrc
 
-# install git
-sudo apt install git
-# get dotfiles
-git clone https://github.com/aplgz/dotfiles
 # set git configuration
 [ -f $HOME/.gitconfig ] && cat dotfiles/.gitconfig >> ~/.gitconfig || cp dotfiles/.gitconfig ~/.gitconfig
 [ -f $HOME/.gitignore ] && cat dotfiles/.gitignore >> ~/.gitignore || cp dotfiles/.gitignore ~/.gitignore
@@ -102,11 +67,3 @@ wget -q -O- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | sh
 #nvm install $LATEST_NODE
 #nvm default $LATEST_NODE
 sudo npm install -g spaceship-prompt
-
-# install brew (linux wrapper)
-#sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-#test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-#test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-#test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-#echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
-#brew install bat
