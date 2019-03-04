@@ -1,5 +1,6 @@
 " vim theme
-color jellybeans
+"color jellybeans
+color onehalfdark
 
 " ctags setting
 "set tags=tags
@@ -25,10 +26,10 @@ set expandtab
 set shiftwidth=4
 map <C-a> <esc>ggVG<CR>
 map <F2> :w<CR><leader>r<CR>
+map <C-i> <leader>ll
 map <C-s> :w<CR>
 map <C-q> :q<CR>
 map <C-o> :vsp ~/.vimrc<CR>
-map <C-i> :vbash<CR>
 "nmap <silent> <A-Up> :wincmd k<CR>
 "nmap <silent> <A-Down> :wincmd j<CR>
 "nmap <silent> <A-Left> :wincmd h<CR>
@@ -145,7 +146,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 "Plugin 'pangloss/vim-javascript'
 "Plugin 'mxw/vim-jsx'
 "Plugin 'othree/javascript-libraries-syntax.vim'
@@ -167,5 +168,7 @@ Plugin 'tpope/vim-surround'
 "Plugin 'taglist.vim'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 Plugin 'miyakogi/conoline.vim'
+Plugin 'lervag/vimtex'
+Plugin 'dart-lang/dart-vim-plugin'
 call vundle#end()            " required
 filetype plugin indent on    " required
