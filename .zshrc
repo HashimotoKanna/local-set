@@ -1,3 +1,5 @@
+export TERM="xterm-256color"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +10,11 @@ export ZSH="/home/chansol0505/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+#ZSH_THEME="jovial"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="cdimascio-lambda"
+#ZSH_THEME="refined"
+#ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -63,15 +69,13 @@ ZSH_THEME="spaceship"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
-    zsh-autosuggestions
-    battery
-    colored-man-pages
-    colorize
-    z
+  z
+  git
+  autojump
+  urltools
+  bgnotify
 )
 
-RPROPMPT='$(battery_pct_prompt)'
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -99,20 +103,22 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-
-###############
-# my settings #
-###############
-# aliases
-source ~/.bash_aliases
-# use Ctrl+s, Ctrl+q as Windows-like keymap in vim
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 stty -ixon
-# zsh battery info
-# flutter execution path
+source ~/.bash_aliases
+source /etc/profile
+
 export PATH="$PATH:$HOME/flutter/bin"
 export PATH="$PATH:$HOME/flutter/bin/cache/dart-sdk/bin"
-# brew wrapper
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-# adb, fastboot
-source /etc/profile
+
+# linux brew
+#test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+#test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+#test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+#echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+
+# autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
