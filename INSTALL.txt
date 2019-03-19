@@ -1,0 +1,17 @@
+#
+# install labmda zsh theme
+#
+git clone https://github.com/cdimascio/lambda-zsh-theme
+cd lambda-zsh-theme
+cp cdimascio-lambda.zsh-theme ~/.oh-my-zsh/themes
+
+#
+# install zsh autosuggestion
+#
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+# Add the following to your .zshrc:
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+#
+wget https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip
+unzip exa-linux-x86_64-0.8.0.zip
