@@ -1,6 +1,9 @@
 alias zshsrc="source ~/.zshrc"
 alias zshconf="vi ~/.zshrc"
 
+alias ssh_gblog='ssh ubuntu@52.78.19.129'
+alias ssh_ctf='ssh ubuntu@54.180.132.66'
+alias kill_screenkey="kill `ps -ef | grep /usr/bin/screenkey | awk 'NR==1 {print $2}'`"
 alias flu=flutter
 alias tm=tmux
 alias phone='flutter emulator --launch Pixel_2_XL_API_24'
@@ -19,10 +22,11 @@ alias golec='cd /home/chansol0505/Dropbox/lecture/'
 alias ca='cat' 
 alias mo='more' 
 alias l='exa -FghUu' cs='cd ..' cl='clear;exa -FghUu' c='clear'
+alias la='exa -FghUua'
 alias e='exa -F' ce='clear;exa -F' ea='exa -Fa' el='exa -lghUu --time-style long-iso --git'
 alias ll='exa -lghUu --time-style long-iso --git'
 alias gi='git' gdb='gdb -q'
-alias py='python' py2='python' py3='python3'
+alias py='python' py2='python2' py3='python3'
 alias qq='exit' q='exit'
 alias gcc-w32='i686-w64-mingw32-gcc'
 alias gcc-w64='x86_64-w64-mingw32-gcc'

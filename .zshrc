@@ -74,6 +74,7 @@ plugins=(
   autojump
   urltools
   bgnotify
+  battery
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -121,4 +122,9 @@ export PATH="$PATH:$HOME/flutter/bin/cache/dart-sdk/bin"
 
 # autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+RPROMPT='$(battery_pct_prompt)'
+
+powerline-daemon -q
+#. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 

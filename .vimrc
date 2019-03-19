@@ -12,7 +12,7 @@ nnoremap <F9> :tabp<CR>
 
 " custom vim settings
 set encoding=utf-8
-set foldmethod=syntax
+set foldmethod=manual
 set nofoldenable
 set hlsearch
 set ignorecase
@@ -30,10 +30,10 @@ map <C-i> <leader>ll
 map <C-s> :w<CR>
 map <C-q> :q<CR>
 map <C-o> :vsp ~/.vimrc<CR>
-"nmap <silent> <A-Up> :wincmd k<CR>
-"nmap <silent> <A-Down> :wincmd j<CR>
-"nmap <silent> <A-Left> :wincmd h<CR>
-"nmap <silent> <A-Right> :wincmd l<CR>
+nmap <silent> <C-Up> :resize -5<CR>
+nmap <silent> <C-Down> :resize +5<CR>
+nmap <silent> <C-Left> :vertical resize -5<CR>
+nmap <silent> <C-Right> :vertical resize +5<CR>
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-h> :wincmd h<CR>
