@@ -12,7 +12,7 @@ nnoremap <F9> :tabp<CR>
 
 " custom vim settings
 set encoding=utf-8
-set foldmethod=syntax
+set foldmethod=manual
 set nofoldenable
 set hlsearch
 set ignorecase
@@ -25,15 +25,15 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 map <C-a> <esc>ggVG<CR>
-map <F2> :w<CR><leader>r<CR>
+map <F2> za
 map <C-i> <leader>ll
 map <C-s> :w<CR>
 map <C-q> :q<CR>
 map <C-o> :vsp ~/.vimrc<CR>
-"nmap <silent> <A-Up> :wincmd k<CR>
-"nmap <silent> <A-Down> :wincmd j<CR>
-"nmap <silent> <A-Left> :wincmd h<CR>
-"nmap <silent> <A-Right> :wincmd l<CR>
+nmap <silent> <C-Up> :resize -5<CR>
+nmap <silent> <C-Down> :resize +5<CR>
+nmap <silent> <C-Left> :vertical resize -5<CR>
+nmap <silent> <C-Right> :vertical resize +5<CR>
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-h> :wincmd h<CR>
@@ -49,7 +49,10 @@ nnoremap <silent> <C-p> :NERDTreeToggle<CR>
 syntax on
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
-hi Comment guifg=#000000 ctermfg=Magenta
+"hi Comment guifg=#afb0ff ctermfg=DarkMagenta
+hi Comment guifg=#afb0ff ctermfg=LightCyan
+"hi Comment guifg=#afb0ff ctermfg=Magenta
+"hi Comment guifg=#2f9fff ctermfg=Magenta
 set t_Co=256
 set cursorline
 hi cursorline term=none cterm=none guibg=#303000 ctermbg=234
@@ -141,8 +144,8 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plugin 'scrooloose/nerdcommenter'
@@ -160,15 +163,19 @@ Plugin 'yggdroot/indentline'
 " syntax checker
 "Plugin 'vim-syntastic/syntastic'
 "Plugin 'chriskempson/base16-vim'
-Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-surround'
 "Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 "Plugin 'universal-ctags/ctags'
 "Plugin 'soramugi/auto-ctags.vim'
 "Plugin 'wesleyche/srcexpl'
 "Plugin 'taglist.vim'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
-Plugin 'miyakogi/conoline.vim'
-Plugin 'lervag/vimtex'
+"Plugin 'miyakogi/conoline.vim'
+"Plugin 'lervag/vimtex'
 Plugin 'dart-lang/dart-vim-plugin'
+"Plugin 'godlygeek/tabular'
+"Plugin 'plasticboy/vim-markdown'
+Plugin 'fidian/hexmode'
+
 call vundle#end()            " required
 filetype plugin indent on    " required

@@ -1,33 +1,37 @@
-alias zshsrc=". ~/.zshrc"
-alias zshconfig="vi ~/.zshrc"
+alias zshsrc="source ~/.zshrc"
+alias zshconf="vi ~/.zshrc"
 
-alias ca='ccat' 
-alias ba='bat' 
-alias mo='cmore' 
-alias inst='sudo apt install -y'
-alias l='ls -CF' cs='cd ..' cl='clear;ls -CF' c='clear'
+alias ssh_gblog='ssh ubuntu@52.78.19.129'
+alias ssh_ctf='ssh ubuntu@54.180.132.66'
+alias kill_screenkey="kill `ps -ef | grep /usr/bin/screenkey | awk 'NR==1 {print $2}'`"
+alias flu=flutter
+alias tm=tmux
+alias phone='flutter emulator --launch Pixel_2_XL_API_24'
+alias win10='vboxmanage startvm f2d2c4b8-f271-4f17-9bf8-1593949bc3d5&'
+alias clock=cli-clock
+alias ctree=christmas.sh
+alias ran=ranger
+alias neo=neofetch
+alias aqua=asciiquarium
+alias glan=glances
+alias vi=vim
+alias alsa=alsamixer
+alias ba=bat
+
+alias golec='cd /home/chansol0505/Dropbox/lecture/'
+alias ca='cat' 
+alias mo='more' 
+alias l='exa -FghUu' cs='cd ..' cl='clear;exa -FghUu' c='clear'
+alias la='exa -FghUua'
 alias e='exa -F' ce='clear;exa -F' ea='exa -Fa' el='exa -lghUu --time-style long-iso --git'
+alias ll='exa -lghUu --time-style long-iso --git'
 alias gi='git' gdb='gdb -q'
-alias py='python' py2='python' py3='python3'
-alias qq='exit'
+alias py='python' py2='python2' py3='python3'
+alias qq='exit' q='exit'
 alias gcc-w32='i686-w64-mingw32-gcc'
 alias gcc-w64='x86_64-w64-mingw32-gcc'
-alias kakao='wine /home/chansol/.wine/drive_c/Program\ Files/Kakao/KakaoTalk/KakaoTalk.exe'
-alias cb='nohup chromium-browser'
+alias cb='nohup chromium 2> /dev/null'
 alias off='shutdown now'
-alias inst='sudo apt install -y'
-alias gophp='cd /var/www/html' goapa='cd /etc/apache2'
-alias godrop='cd /home/kanna/Dropbox'
-alias golec='cd /home/kanna/Dropbox/lecture/'
-alias gogbc='cd /home/kanna/Dropbox/gbc/'
-alias gocv='cd /home/kanna/Dropbox/lecture/cv/opencvtest'
-alias gorepo='cd /home/kanna/repo'
-alias img='img.sh'
-alias ocv='ocv.sh'
-alias ocvcompile='ocvcompile.sh'
-alias opencv="~/.compile_opencv.sh"
-alias folder='nohup dolphin&'
-alias pdf='nohup FoxitReader'
 
 alias afreeca_wallmae='nohup streamlink afreecatv.com/ims8868 best&'
 alias afreeca_blackwalk='nohup streamlink afreecatv.com/gudcjf604 best&'
@@ -56,5 +60,3 @@ alias afreeca_jd='nohup streamlink afreecatv.com/jaedong23 best&'
 alias afreeca_gulza='nohup streamlink afreecatv.com/skswhdkgo best&'
 alias afreeca_landing='nohup streamlink afreecatv.com/guslgood2 best&'
 alias afreeca_magician='nohup streamlink afreecatv.com/godlife118 best&'
-alias goresin='cd /var/resin/webapps/ROOT/'
-alias logout='qdbus org.kde.ksmserver /KSMServer logout 1 3 3'
