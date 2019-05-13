@@ -1,6 +1,11 @@
 " vim theme
 "color jellybeans
-color onehalfdark
+syntax enable
+"color monokai
+set termguicolors
+colors monokai_pro
+"color onehalfdark
+
 
 " ctags setting
 "set tags=tags
@@ -12,7 +17,8 @@ nnoremap <F9> :tabp<CR>
 
 " custom vim settings
 set encoding=utf-8
-set foldmethod=manual
+"set foldmethod=manual
+set foldmethod=syntax
 set nofoldenable
 set hlsearch
 set ignorecase
@@ -23,7 +29,8 @@ se nu rnu
 set smartindent
 set tabstop=4
 set expandtab
-set shiftwidth=4
+map <C-c> :IndentLinesToggle<CR>
+map <C-m> :se nu!<CR>:se rnu!<CR>
 map <C-a> <esc>ggVG<CR>
 map <F2> za
 map <C-i> <leader>ll
@@ -46,7 +53,7 @@ cnoreabbrev list PluginList
 cnoreabbrev euckr :e ++enc=euc-kr
 nnoremap <silent> <C-p> :NERDTreeToggle<CR>
 " custom color settings
-syntax on
+"syntax on
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
 "hi Comment guifg=#afb0ff ctermfg=DarkMagenta
@@ -107,7 +114,10 @@ let g:SrcExpl_prevDefKey = "<F3>"
 let g:SrcExpl_nextDefKey = "<F4>"
 
 " airline theme
-let g:airline_theme='onehalfdark'
+"let g:airline_theme='monochrome'
+"let g:airline_theme='cool'
+let g:airline_theme='cobalt2'
+"let g:airline_theme='onehalfdark'
 
 " indent line settings
 let g:indentLine_color_term = 20
@@ -176,6 +186,8 @@ Plugin 'dart-lang/dart-vim-plugin'
 "Plugin 'godlygeek/tabular'
 "Plugin 'plasticboy/vim-markdown'
 Plugin 'fidian/hexmode'
+Plugin 'phanviet/vim-monokai-pro'
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

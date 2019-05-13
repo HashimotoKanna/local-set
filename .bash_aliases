@@ -1,11 +1,13 @@
 alias zshsrc="source ~/.zshrc"
 alias zshconf="vi ~/.zshrc"
 
+alias homewin='rdesktop -g 70% -P -z -x l -r sound:off -u chans 183.105.233.130:5555'
+alias sd=sudo
 alias ssh_gblog='ssh ubuntu@52.78.19.129'
 alias ssh_ctf='ssh ubuntu@54.180.132.66'
-alias kill_screenkey="kill `ps -ef | grep /usr/bin/screenkey | awk 'NR==1 {print $2}'`"
+alias kill_screenkey="kill $(ps -ef | grep /usr/bin/screenkey | awk 'NR==1 {print $2}')"
 alias flu=flutter
-alias tm=tmux
+alias tm=tmux t=tmux
 alias phone='flutter emulator --launch Pixel_2_XL_API_24'
 alias win10='vboxmanage startvm f2d2c4b8-f271-4f17-9bf8-1593949bc3d5&'
 alias clock=cli-clock
@@ -19,7 +21,7 @@ alias alsa=alsamixer
 alias ba=bat
 
 alias golec='cd /home/chansol0505/Dropbox/lecture/'
-alias ca='cat' 
+alias ca='bat' cat='bat'
 alias mo='more' 
 alias l='exa -FghUu' cs='cd ..' cl='clear;exa -FghUu' c='clear'
 alias la='exa -FghUua'

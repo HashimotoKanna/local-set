@@ -1,17 +1,20 @@
-
 export TERM="xterm-256color"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/home/chansol0505/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
+#ZSH_THEME="jovial"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 ZSH_THEME="cdimascio-lambda"
+#ZSH_THEME="refined"
+#ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -66,9 +69,12 @@ ZSH_THEME="cdimascio-lambda"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-z
-git
-battery
+  z
+  git
+  autojump
+  urltools
+  bgnotify
+  battery
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -103,22 +109,22 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 stty -ixon
 source ~/.bash_aliases
-#source /etc/profile
+source /etc/profile
 
 export PATH="$PATH:$HOME/flutter/bin"
 export PATH="$PATH:$HOME/flutter/bin/cache/dart-sdk/bin"
 
-## linux brew
-##test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-##test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-##test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-##echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+# linux brew
+#test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+#test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+#test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+#echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
 
-## autosuggestions
-source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 RPROMPT='$(battery_pct_prompt)'
 
-##powerline-daemon -q
-##. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+powerline-daemon -q
+#. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
