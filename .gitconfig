@@ -1,7 +1,3 @@
-[user]
-	name = Chansol, Han
-	email = chansol0505@naver.com
-	username = chansol0505
 [core]
 	editor = vim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
@@ -35,9 +31,6 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
-[github]
-	user = chansol0505
-	token = token
 [gitflow "prefix"]
 	feature = feature-
 	release = release-
