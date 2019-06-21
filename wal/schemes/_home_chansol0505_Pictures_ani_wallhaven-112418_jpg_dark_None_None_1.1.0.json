@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chansol0505/Pictures/ani/wallhaven-112418.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#161221",
+        "foreground": "#bdb3c9",
+        "cursor": "#bdb3c9"
+    },
+    "colors": {
+        "color0": "#161221",
+        "color1": "#69556E",
+        "color2": "#253C8A",
+        "color3": "#2F4D88",
+        "color4": "#585F97",
+        "color5": "#7076D0",
+        "color6": "#8E758F",
+        "color7": "#bdb3c9",
+        "color8": "#847d8c",
+        "color9": "#69556E",
+        "color10": "#253C8A",
+        "color11": "#2F4D88",
+        "color12": "#585F97",
+        "color13": "#7076D0",
+        "color14": "#8E758F",
+        "color15": "#bdb3c9"
+    }
+}
