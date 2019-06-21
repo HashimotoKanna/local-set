@@ -48,7 +48,7 @@ font-6 = FontAwesome5Brands:size=12;1
 font-7 = NanumSquareRound:size=12;1
 modules-left = i3 
 modules-center = xwindow 
-modules-right = blue-on blue-off wlan eth volume battery backlight clock calender progmenu 
+modules-right = blue-on blue-off wlan eth volume battery backlight clock weekday calender progmenu 
 
 [module/progmenu]
 type = custom/menu
@@ -259,6 +259,16 @@ format = <label>
 label = %{A1:gsimplecal &:}%output%%{A}
 label-foreground = ${colors.yellow}
 format-padding = 1
+
+[module/weekday]
+type = custom/script
+interval = 1
+exec = echo "$(date +%A)"
+format = <label>
+label = %{A1:gsimplecal &:}%output%%{A}
+label-foreground = ${colors.blue}
+format-padding = 1
+
 
 [module/calender]
 type = custom/script
