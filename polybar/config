@@ -28,7 +28,7 @@ foreground = ${colors.foreground}
 line-size = 1
 border-size = 0
 border-color = ${colors.background} 
-padding-left = 2
+padding-left = 1
 padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
@@ -43,16 +43,21 @@ font-5 = FontAwesome5Free:size=12;1
 font-6 = FontAwesome5Brands:size=12;1
 font-7 = NanumSquareRound:size=12;1
 modules-left = i3 xwindow 
-modules-center = cpu memory temperature battery 
-;modules-right = cpu memory temperature blue-on blue-off wlan eth backlight volume battery clock weekday calender progmenu 
-modules-right = blue-on blue-off wlan eth backlight volume clock weekday calender progmenu 
+;modules-center = split cpu memory temperature battery split 
+modules-right = cpu memory temperature battery split blue-on blue-off wlan eth volume split clock weekday calender progmenu 
+;modules-right = blue-on blue-off wlan eth volume split clock weekday calender progmenu 
+
+[module/split]
+type = custom/text
+content = "｜"
+content-foreground = #e0ffff
 
 [module/progmenu]
 type = custom/menu
 format-underline = #6aafe6
 expand-right = false
-format-spacing = 1
-format-padding = 1
+;format-spacing = 1
+;format-padding = 1
 label-open = 
 label-open-font = 2
 label-open-foreground = ${colors.blue}
@@ -163,7 +168,8 @@ label-urgent-padding = ${self.label-focused-padding}
 
 [module/xwindow]
 type = internal/xwindow
-label = %{A1:rofi -config /home/dolly/.config/rofi/config_bspwm -width 27 -show window:}%title:0:200:...%%{A}
+label = %{A1:rofi -config /home/dolly/.config/rofi/config_bspwm -width 27 -show window:}%title:0:70:...%%{A}
+label-font = 1
 label-underline = #feee7d
 
 [module/eth]
@@ -177,7 +183,7 @@ format-disconnected = <label-disconnected>
 label-connected = %{A1:nmcli-rofi:}%downspeed%%{A}
 label-connected-foreground = ${colors.foreground}
 label-disconnected = 
-format-connected-padding = 1
+;format-connected-padding = 1
 
 [module/wlan]
 type = internal/network
@@ -193,8 +199,8 @@ label-connected = %{A1:nm-connection-editor:}%essid%%{A}
 label-connected-foreground = ${colors.foreground}
 label-disconnected = %{A1:nm-connection-editor:}N/A%{A}
 label-disconnected-foreground = ${colors.red}
-format-connected-padding = 1
-format-disconnected-padding = 1
+;format-connected-padding = 1
+;format-disconnected-padding = 1
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -219,7 +225,7 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.foreground-alt}
-format-volume-padding = 1
+;format-volume-padding = 1
 
 [module/battery]
 type = internal/battery
@@ -249,9 +255,9 @@ ramp-capacity-4-foreground = ${colors.foreground-alt}
 ramp-capacity-foreground = ${colors.foreground-alt}
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
-format-discharging-padding = 1
-format-charging-padding = 1
-format-full-padding = 1
+;format-discharging-padding = 1
+;format-charging-padding = 1
+;format-full-padding = 1
 
 [module/clock]
 type = custom/script
@@ -261,7 +267,7 @@ exec = echo " $(date +%R)"
 format = <label>
 label = %{A1:gsimplecal &:}%output%%{A}
 label-foreground = ${colors.yellow}
-format-padding = 1
+; format-padding = 1
 
 [module/weekday]
 type = custom/script
@@ -270,7 +276,7 @@ exec = echo "$(date +%A)"
 format = <label>
 label = %{A1:gsimplecal &:}%output%%{A}
 label-foreground = ${colors.blue}
-format-padding = 1
+;format-padding = 1
 
 
 [module/calender]
@@ -280,7 +286,7 @@ exec = echo "$(date +%D)"
 format = <label>
 label = %{A1:gsimplecal &:}%output%%{A}
 label-foreground = ${colors.cyan}
-format-padding = 1
+;format-padding = 1
 
 [module/backlight]
 type = internal/xbacklight
