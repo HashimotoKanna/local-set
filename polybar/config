@@ -272,7 +272,7 @@ label-foreground = ${colors.yellow}
 [module/weekday]
 type = custom/script
 interval = 60
-exec = echo "$(date +%A)"
+exec = echo "$(date +%a)"
 format = <label>
 label = %{A1:gsimplecal &:}%output%%{A}
 label-foreground = ${colors.blue}
@@ -282,7 +282,8 @@ label-foreground = ${colors.blue}
 [module/calender]
 type = custom/script
 interval = 60
-exec = echo "$(date +%D)"
+;exec = echo "$(date +%D)"
+exec = echo "$(date +%y/%m/%d)"
 format = <label>
 label = %{A1:gsimplecal &:}%output%%{A}
 label-foreground = ${colors.cyan}
