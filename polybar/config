@@ -1,7 +1,3 @@
-;---------------------------
-; Polybar config by Dolly ;)
-;---------------------------
-
 [colors]
 background = ${env:color0_alpha}
 background-alt = ${xrdb:color0:#222}
@@ -47,8 +43,9 @@ font-5 = FontAwesome5Free:size=12;1
 font-6 = FontAwesome5Brands:size=12;1
 font-7 = NanumSquareRound:size=12;1
 modules-left = i3 xwindow 
-;modules-center = xwindow 
-modules-right = cpu memory temperature blue-on blue-off wlan eth backlight volume battery clock weekday calender progmenu 
+modules-center = cpu memory temperature battery 
+;modules-right = cpu memory temperature blue-on blue-off wlan eth backlight volume battery clock weekday calender progmenu 
+modules-right = blue-on blue-off wlan eth backlight volume clock weekday calender progmenu 
 
 [module/progmenu]
 type = custom/menu
@@ -243,7 +240,12 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-0-foreground = #f00
+ramp-capacity-1-foreground = #f00
+ramp-capacity-2-foreground = #ff0
+; #0f0
+ramp-capacity-3-foreground = ${colors.foreground-alt}
+ramp-capacity-4-foreground = ${colors.foreground-alt}
 ramp-capacity-foreground = ${colors.foreground-alt}
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
