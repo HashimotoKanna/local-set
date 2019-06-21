@@ -46,8 +46,8 @@ font-4 = "Font Awesome 5 Free:size=12;1"
 font-5 = FontAwesome5Free:size=12;1
 font-6 = FontAwesome5Brands:size=12;1
 font-7 = NanumSquareRound:size=12;1
-modules-left = i3 
-modules-center = xwindow 
+modules-left = i3 xwindow 
+;modules-center = xwindow 
 modules-right = blue-on blue-off wlan eth volume battery backlight clock weekday calender progmenu 
 
 [module/progmenu]
