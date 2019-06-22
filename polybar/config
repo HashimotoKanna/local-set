@@ -19,6 +19,7 @@ cyan = #8ABEB7
 white = #ECEDEC
 
 [bar/bar]
+monitor = eDP1
 width = 100%
 height = 32
 fixed-center = true
@@ -44,7 +45,7 @@ font-6 = FontAwesome5Brands:size=12;1
 font-7 = NanumSquareRound:size=12;1
 modules-left = i3 xwindow 
 ;modules-center = split cpu memory temperature battery split 
-modules-right = cpu memory temperature battery split blue-on blue-off wlan eth volume split clock weekday calender progmenu 
+modules-right = cpu memory temperature battery split blue-on blue-off wlan eth volume backlight split clock weekday calender progmenu 
 ;modules-right = blue-on blue-off wlan eth volume split clock weekday calender progmenu 
 
 [module/split]
@@ -241,11 +242,14 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
+animation-charging-0 = 
+animation-charging-0-foreground = #ff0
+;animation-charging-1 = 
+;animation-charging-1-foreground = #ff0
+;animation-charging-2 = 
+;animation-charging-2-foreground = #ff0
+;animation-charging-3 = 
+;animation-charging-3-foreground = #ff0
 ramp-capacity-0-foreground = #f00
 ramp-capacity-1-foreground = #f00
 ramp-capacity-2-foreground = #ff0
@@ -409,77 +413,28 @@ label-unmounted-foreground = #55
 
 [module/memory]
 type = internal/memory
-; Seconds to sleep between updates
-; Default: 1
 interval = 3
-; Available tags:
-;   <label> (default)
-;   <bar-used>
-;   <bar-free>
-;   <ramp-used>
-;   <ramp-free>
-;   <bar-swap-used>
-;   <bar-swap-free>
-;   <ramp-swap-used>
-;   <ramp-swap-free>
 ;format = <label>
 format = <label> <ramp-used>
 format-prefix = "RAM "
 format-prefix-foreground = ${colors.foreground-alt}
-; Available tokens:
-;   %percentage_used% (default)
-;   %percentage_free%
-;   %gb_used%
-;   %gb_free%
-;   %gb_total%
-;   %mb_used%
-;   %mb_free%
-;   %mb_total%
-;   %percentage_swap_used%
-;   %percentage_swap_free%
-;   %mb_swap_total%
-;   %mb_swap_free%
-;   %mb_swap_used%
-;   %gb_swap_total%
-;   %gb_swap_free%
-;   %gb_swap_used%
 label = %percentage_used%%
-; Only applies if <bar-used> is used
-bar-used-indicator =
-bar-used-width = 50
-bar-used-foreground-0 = #55aa55
-bar-used-foreground-1 = #557755
-bar-used-foreground-2 = #f5a70a
-bar-used-foreground-3 = #ff5555
-bar-used-fill = ▐
-bar-used-empty = ▐
-bar-used-empty-foreground = #444444
-; Only applies if <ramp-used> is used
 ramp-used-0 = ▁
-ramp-used-0-foreground = #0f0 
 ramp-used-1 = ▂
-ramp-used-1-foreground = #0f0 
 ramp-used-2 = ▃
-ramp-used-2-foreground = #0f0 
 ramp-used-3 = ▄
-ramp-used-3-foreground = #ff0 
 ramp-used-4 = ▅
-ramp-used-4-foreground = #ff0
 ramp-used-5 = ▆
-ramp-used-5-foreground = #f00 
 ramp-used-6 = ▇
-ramp-used-6-foreground = #f00
 ramp-used-7 = █
+ramp-used-0-foreground = #0f0 
+ramp-used-1-foreground = #0f0 
+ramp-used-2-foreground = #0f0 
+ramp-used-3-foreground = #ff0 
+ramp-used-4-foreground = #ff0
+ramp-used-5-foreground = #f00 
+ramp-used-6-foreground = #f00
 ramp-used-7-foreground = #f00 
-; Only applies if <ramp-free> is used
-ramp-free-0 = ▁
-ramp-free-1 = ▂
-ramp-free-2 = ▃
-ramp-free-3 = ▄
-ramp-free-4 = ▅
-ramp-free-5 = ▆
-ramp-free-6 = ▇
-ramp-free-7 = █
 
 [module/temperature]
 type = internal/temperature
@@ -499,7 +454,7 @@ type = internal/temperature
 ; hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
 ; Threshold temperature to display warning label (in degrees celsius)
 ; Default: 80
-warn-temperature = 65
+warn-temperature = 70
 ; Whether or not to show units next to the temperature tokens (°C, °F)
 ; Default: true
 ; units = false
