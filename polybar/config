@@ -122,21 +122,23 @@ click-left =
 
 [module/blue-off]
 type = custom/script
-interval = 3
+interval = 2
 format = <label>
-format-foreground = ${colors.red}
-label = "%output:0:30%"
-exec = ~/.config/polybar/bluetooth-off.sh
+format-foreground = #f00
+label = "%output:4:5%"
+exec = ~/.config/polybar/script/bluetooth-off-icon.sh
 click-left = blueberry &
+click-right = ~/.config/polybar/script/bluetooth-on.sh 
 
 [module/blue-on]
 type = custom/script
-interval = 3
+interval = 2
 format = <label>
 format-foreground = ${colors.foreground-alt}
-label = "%output:0:30%"
-exec = ~/.config/polybar/bluetooth-on.sh
+label = "%output:4:5%"
+exec = ~/.config/polybar/script/bluetooth-on-icon.sh
 click-left = blueberry &
+click-right = ~/.config/polybar/script/bluetooth-off.sh 
 
 [module/i3]
 type = internal/i3
@@ -195,11 +197,14 @@ format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 format-disconnected = <label-disconnected>
 format-disconnected-prefix = " "
-format-disconnected-prefix-foreground = ${colors.red}
-label-connected = %{A1:nm-connection-editor:}%essid%%{A}
+format-disconnected-prefix-foreground = #f00
+; label-connected = %{A1:nm-connection-editor:}%essid%%{A}
+label-connected = %{A1:alacritty -e nmtui:}%{A2:~/.config/polybar/script/wifi-off.sh:}%{A3:~/.config/polybar/script/wifi-on.sh:}%essid%%{A}%{A}%{A}
 label-connected-foreground = ${colors.foreground}
-label-disconnected = %{A1:nm-connection-editor:}N/A%{A}
-label-disconnected-foreground = ${colors.red}
+; label-disconnected = %{A1:alacritty -e nmtui:}N/A%{A}
+label-disconnected = %{A1:alacritty -e nmtui:}%{A2:~/.config/polybar/script/wifi-off.sh:}%{A3:~/.config/polybar/script/wifi-on.sh:}N/A%{A}%{A}%{A}
+; label-disconnected = %{A1:nm-connection-editor:}N/A%{A}
+label-disconnected-foreground = #f00
 ;format-connected-padding = 1
 ;format-disconnected-padding = 1
 
@@ -221,12 +226,14 @@ label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 format-muted = <label-muted>
 format-muted-foreground = ${colors.foreground-alt}
-label-muted =  muted
+label-muted =  muted
+label-muted-foreground = #f00
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.foreground-alt}
 ;format-volume-padding = 1
+;label-connected = %{A1:nm-connection-editor:}%essid%%{A}
 
 [module/battery]
 type = internal/battery
@@ -296,7 +303,7 @@ label-foreground = ${colors.cyan}
 [module/backlight]
 type = internal/xbacklight
 format = <ramp> <label>
-label = %percentage:2:3%%
+label = %{A1:~/.config/polybar/script/light-dec.sh:}%{A3:~/.config/polybar/script/light-inc.sh:}%percentage:2:3%%%{A}%{A}
 format-foreground = ${colors.cyan}
 label-foreground = ${colors.white}
 ramp-0 = 🌕
