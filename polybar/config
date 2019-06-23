@@ -45,8 +45,8 @@ font-6 = FontAwesome5Brands:size=12;1
 font-7 = NanumSquareRound:size=12;1
 modules-left = i3 xwindow 
 ;modules-center = split cpu memory temperature battery split 
-modules-right = cpu memory temperature battery split blue-on blue-off wlan eth volume backlight split clock weekday calender progmenu 
-;modules-right = blue-on blue-off wlan eth volume split clock weekday calender progmenu 
+modules-right = cpu memory temperature battery split blue-on blue-off wlan eth volume backlight split clock weekday-sun weekday-sat weekday calender progmenu 
+;modules-right = blue-on blue-off wlan eth volume split clock weekday-sun weekday-sat weekday calender progmenu 
 
 [module/split]
 type = custom/text
@@ -125,7 +125,7 @@ type = custom/script
 interval = 2
 format = <label>
 format-foreground = #f00
-label = "%output:4:5%"
+label = "%output:0:5%"
 exec = ~/.config/polybar/script/bluetooth-off-icon.sh
 click-left = blueberry &
 click-right = ~/.config/polybar/script/bluetooth-on.sh 
@@ -135,7 +135,7 @@ type = custom/script
 interval = 2
 format = <label>
 format-foreground = ${colors.foreground-alt}
-label = "%output:4:5%"
+label = "%output:0:5%"
 exec = ~/.config/polybar/script/bluetooth-on-icon.sh
 click-left = blueberry &
 click-right = ~/.config/polybar/script/bluetooth-off.sh 
@@ -199,10 +199,10 @@ format-disconnected = <label-disconnected>
 format-disconnected-prefix = " "
 format-disconnected-prefix-foreground = #f00
 ; label-connected = %{A1:nm-connection-editor:}%essid%%{A}
-label-connected = %{A1:alacritty -e nmtui:}%{A2:~/.config/polybar/script/wifi-off.sh:}%{A3:~/.config/polybar/script/wifi-on.sh:}%essid%%{A}%{A}%{A}
+label-connected = %{A1:alacritty -e nmtui:}%{A3:~/.config/polybar/script/wifi-off.sh:}%essid%%{A}%{A}
 label-connected-foreground = ${colors.foreground}
 ; label-disconnected = %{A1:alacritty -e nmtui:}N/A%{A}
-label-disconnected = %{A1:alacritty -e nmtui:}%{A2:~/.config/polybar/script/wifi-off.sh:}%{A3:~/.config/polybar/script/wifi-on.sh:}N/A%{A}%{A}%{A}
+label-disconnected = %{A1:alacritty -e nmtui:}%{A3:~/.config/polybar/script/wifi-on.sh:}N/A%{A}%{A}
 ; label-disconnected = %{A1:nm-connection-editor:}N/A%{A}
 label-disconnected-foreground = #f00
 ;format-connected-padding = 1
@@ -222,7 +222,7 @@ label-indicator-background = ${colors.background}
 [module/volume]
 type = internal/alsa
 format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%%
+label-volume = %{A5:amixer set Master 8-:}%{A4:amixer set Master 8+:} %percentage:2:3%%%{A}%{A}
 label-volume-foreground = ${root.foreground}
 format-muted = <label-muted>
 format-muted-foreground = ${colors.foreground-alt}
@@ -272,21 +272,48 @@ animation-charging-framerate = 750
 
 [module/clock]
 type = custom/script
-interval = 5
+interval = 2
 ;exec = echo "$(date +%r)"
-exec = echo " $(date +%R)"
+exec = echo "$(date +%R)"
+format = <label>
+format-prefix-foreground =  ${colors.foreground-alt}
+format-prefix = " "
+label = %{A1:gsimplecal &:}%output%%{A}
+; label-foreground = #0f0
+: ${colors.yellow}
+; format-padding = 1
+
+[module/weekday-sun]
+type = custom/script
+interval = 2
+; exec = echo "$(date +%a)"
+exec = ~/.config/polybar/script/weekday-sun.sh
 format = <label>
 label = %{A1:gsimplecal &:}%output%%{A}
-label-foreground = ${colors.yellow}
-; format-padding = 1
+label-foreground = #f00
+; ${colors.foreground-alt}
+;format-padding = 1
+
+[module/weekday-sat]
+type = custom/script
+interval = 2
+; exec = echo "$(date +%a)"
+exec = ~/.config/polybar/script/weekday-sat.sh
+format = <label>
+label = %{A1:gsimplecal &:}%output%%{A}
+label-foreground = #f00
+; ${colors.foreground-alt}
+;format-padding = 1
 
 [module/weekday]
 type = custom/script
-interval = 60
-exec = echo "$(date +%a)"
+interval = 2
+; exec = echo "$(date +%a)"
+exec = ~/.config/polybar/script/weekday.sh
 format = <label>
 label = %{A1:gsimplecal &:}%output%%{A}
-label-foreground = ${colors.blue}
+; label-foreground = #f00
+; ${colors.foreground-alt}
 ;format-padding = 1
 
 
@@ -297,13 +324,14 @@ interval = 60
 exec = echo "$(date +%y/%m/%d)"
 format = <label>
 label = %{A1:gsimplecal &:}%output%%{A}
-label-foreground = ${colors.cyan}
+label-foreground = #0ff
+;${colors.cyan}
 ;format-padding = 1
 
 [module/backlight]
 type = internal/xbacklight
 format = <ramp> <label>
-label = %{A1:~/.config/polybar/script/light-dec.sh:}%{A3:~/.config/polybar/script/light-inc.sh:}%percentage:2:3%%%{A}%{A}
+label = %{A1:xbacklight -set 10:}%{A3:xbacklight -set 100:}%{A5:xbacklight -dec 15:}%{A4:xbacklight -inc 15:}%percentage:2:3%%%{A}%{A}%{A}%{A}
 format-foreground = ${colors.cyan}
 label-foreground = ${colors.white}
 ramp-0 = 🌕

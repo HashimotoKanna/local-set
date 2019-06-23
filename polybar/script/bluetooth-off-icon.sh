@@ -2,10 +2,9 @@
 icon=""
 status=`systemctl is-active bluetooth.service`
 
-if [ $status == "active" ]
+if [ ! $status == "active" ]
 then
-	  echo ""
-else
 	  echo "$icon OFF"
+else
+      echo ""
 fi
-

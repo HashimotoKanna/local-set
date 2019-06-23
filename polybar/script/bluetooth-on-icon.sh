@@ -6,6 +6,5 @@ if [ $status == "active" ]
 then
 	  echo "$icon ON"
 else
-	  echo ""
+      echo ""
 fi
-
