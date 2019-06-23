@@ -43,6 +43,7 @@ font-4 = "Font Awesome 5 Free:size=12;1"
 font-5 = FontAwesome5Free:size=12;1
 font-6 = FontAwesome5Brands:size=12;1
 font-7 = NanumSquareRound:size=12;1
+font-8 = Monapo:size=12;1
 modules-left = i3 xwindow 
 ;modules-center = split cpu memory temperature battery split 
 modules-right = cpu memory temperature battery split blue-on blue-off wlan eth volume backlight split clock weekday-sun weekday-sat weekday calender progmenu 
@@ -313,7 +314,8 @@ interval = 2
 exec = ~/.config/polybar/script/weekday.sh
 format = <label>
 label = %{A1:gsimplecal &:}%output%%{A}
-; label-foreground = #f00
+label-foreground = #ff0
+; ${colors.cyan}
 ; ${colors.foreground-alt}
 ;format-padding = 1
 
