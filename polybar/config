@@ -296,7 +296,7 @@ label-foreground = ${colors.cyan}
 [module/backlight]
 type = internal/xbacklight
 format = <ramp> <label>
-label = %percentage%%
+label = %percentage:2:3%%
 format-foreground = ${colors.cyan}
 label-foreground = ${colors.white}
 ramp-0 = 🌕
@@ -360,7 +360,7 @@ ramp-load-2-foreground = #f00
 ;   %percentage-sum% - Cumulative load on all cores
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label = %percentage%%
+label = %percentage:2:3%%
 ; Spacing between individual per-core ramps
 ramp-coreload-spacing = 1
 ramp-coreload-0 = ▁
@@ -418,7 +418,7 @@ interval = 3
 format = <label> <ramp-used>
 format-prefix = "RAM "
 format-prefix-foreground = ${colors.foreground-alt}
-label = %percentage_used%%
+label = %percentage_used:2:3%%
 ramp-used-0 = ▁
 ramp-used-1 = ▂
 ramp-used-2 = ▃
