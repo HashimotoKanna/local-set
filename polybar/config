@@ -281,7 +281,7 @@ format = <label>
 format-prefix-foreground =  ${colors.foreground-alt}
 format-prefix = " "
 label = %{A1:gsimplecal &:}%output%%{A}
-; label-foreground = #0f0
+label-foreground = #0f0
 : ${colors.yellow}
 ; format-padding = 1
 
