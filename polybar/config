@@ -279,7 +279,7 @@ interval = 2
 exec = echo "$(date +%R)"
 format = <label>
 format-prefix-foreground =  ${colors.foreground-alt}
-format-prefix = " "
+; format-prefix = " "
 label = %{A1:gsimplecal &:}%output%%{A}
 label-foreground = #0f0
 : ${colors.yellow}
