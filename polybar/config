@@ -221,7 +221,7 @@ label-indicator-background = ${colors.background}
 
 [module/volume]
 type = internal/alsa
-format-volume = <ramp-volume> <label-volume>
+format-volume = <ramp-volume><label-volume>
 label-volume = %{A5:amixer set Master 8-:}%{A4:amixer set Master 8+:} %percentage:2:3%%%{A}%{A}
 label-volume-foreground = ${root.foreground}
 format-muted = <label-muted>
@@ -243,7 +243,8 @@ full-at = 98
 format-charging = <animation-charging> <label-charging> 
 format-discharging = <ramp-capacity> <label-discharging>
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.blue}
+format-full-prefix-foreground = ${colors.foreground-alt}
+; format-full-prefix-foreground = ${colors.blue}
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
