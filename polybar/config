@@ -33,13 +33,22 @@ locale = ko_KR.UTF-8
 font-0 = Inconsolata:size=12;1
 font-1 = NanumSquareRound:size=12;1
 font-2 = Monapo:size=12;1
-font-3 = "Wuncon Siji:size=12;1"
-font-4 = Material Icons:size=12;1
-font-5 = Weather Icons:size=12;1
-font-6 = FontAwesome:size=12;1
+font-3 = Wuncon Siji:size=12;1
+font-4 = FontAwesome:size=12;1
+font-5 = Material Icons:size=12;1
+font-6 = Weather Icons:size=12;1
 modules-left = i3 xwindow 
 modules-center = clock weekday-sun weekday-sat weekday calender weather
-modules-right = bluetooth wlan eth info-pingrtt backlight volume battery
+modules-right = bluetooth wlan eth info-pingrtt backlight volume battery bottombar
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/script/polybar-forecast
+label = %output%
+label-font = 7
+label-foreground = ${colors.foreground-alt}
+exec-if = ping openweathermap.org -c 1
+interval = 600
 
 [bar/bottom]
 monitor = eDP1
@@ -64,6 +73,12 @@ modules-center = cpu memory temperature system-cpu-temppercore
 modules-right = info-ssh-sessions info-trash 
 tray-position = right
 tray-maxsize = 16
+
+[module/bottombar]
+type = custom/text
+content = ""
+content-foreground = ${colors.blue}
+click-left = toggle_bottom_bar.sh
 
 [module/system-uptime-pretty]
 type = custom/script
@@ -104,14 +119,6 @@ label = %output%
 label-foreground = #0ff
 interval = 1024
 
-[module/weather]
-type = custom/script
-exec = ~/.config/polybar/script/polybar-forecast
-label = %output%
-label-foreground = ${colors.foreground-alt}
-exec-if = ping openweathermap.org -c 1
-interval = 600
-; label-font = 3
 
 [module/system-cpu-temppercore]
 type = custom/script
