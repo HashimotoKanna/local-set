@@ -175,8 +175,9 @@ gaps inner 8
 gaps outer 0
 #smart_gaps on
 
+exec --no-startup-id nm-applet
 exec --no-startup-id xrdb ~/.Xresources
-exec --no-startup-id watch -n 1200 feh --randomize --bg-fill ~/Pictures/ani/*
+exec --no-startup-id watch -n 3600 feh --randomize --bg-fill ~/Pictures/ani/*
 exec --no-startup-id ~/.config/polybar/start.sh
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
 exec --no-startup-id dropbox

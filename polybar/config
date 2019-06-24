@@ -6,10 +6,6 @@ foreground-alt = ${xrdb:color6:#222}
 primary = ${xrdb:color6:#222}
 secondary = ${xrdb:color6:#222}
 alert = ${xrdb:color6:#222}
-;background = #B3000000
-;background-alt = #1A1A1A
-;foreground = #ECEDEC
-;foreground-alt = #8C8C8C
 red = #CC6666
 green = #B5BD68
 yellow = #F0C674
@@ -18,7 +14,7 @@ purple = #B294BB
 cyan = #8ABEB7
 white = #ECEDEC
 
-[bar/bar]
+[bar/top]
 monitor = eDP1
 width = 100%
 height = 32
@@ -34,20 +30,96 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 locale = ko_KR.UTF-8
-;locale = en_US.UTF-8
 font-0 = Inconsolata:size=12;1
-font-1 = lineawesome:size=13;1
-font-2 = "Wuncon Siji:size=12;1"
-font-3 = FontAwesome:size=12;1
-font-4 = "Font Awesome 5 Free:size=12;1"
-font-5 = FontAwesome5Free:size=12;1
-font-6 = FontAwesome5Brands:size=12;1
-font-7 = NanumSquareRound:size=12;1
-font-8 = Monapo:size=12;1
+font-1 = NanumSquareRound:size=12;1
+font-2 = Monapo:size=12;1
+font-3 = "Wuncon Siji:size=12;1"
+font-4 = Material Icons:size=12;1
+font-5 = Weather Icons:size=12;1
+font-6 = FontAwesome:size=12;1
 modules-left = i3 xwindow 
-;modules-center = split cpu memory temperature battery split 
-modules-right = cpu memory temperature battery split blue-on blue-off wlan eth volume backlight split clock weekday-sun weekday-sat weekday calender progmenu 
-;modules-right = blue-on blue-off wlan eth volume split clock weekday-sun weekday-sat weekday calender progmenu 
+modules-center = clock weekday-sun weekday-sat weekday calender weather
+modules-right = bluetooth wlan eth info-pingrtt backlight volume battery
+
+[bar/bottom]
+monitor = eDP1
+width = 100%
+height = 30
+fixed-center = true
+bottom = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 1
+border-size = 0
+border-color = ${colors.background} 
+padding-left = 1
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 1
+locale = ko_KR.UTF-8
+font-0 = Inconsolata:size=12;1
+font-1 = FontAwesome:size=12;1
+modules-left = progmenu info-kernel system-uptime-pretty system-usb-udev 
+modules-center = cpu memory temperature system-cpu-temppercore 
+modules-right = info-ssh-sessions info-trash 
+tray-position = right
+tray-maxsize = 16
+
+[module/system-uptime-pretty]
+type = custom/script
+exec = ~/.config/polybar/script/system-uptime-pretty.sh
+interval = 30
+
+[module/info-trash]
+type = custom/script
+exec = ~/.config/polybar/script/info-trash.sh
+label = %output%
+label-foreground = #77
+interval = 60
+click-left = ~/.config/polybar/script/info-trash.sh --clean
+
+[module/info-ssh-sessions]
+type = custom/script
+exec = ~/.config/polybar/script/info-ssh-sessions.sh
+interval = 5
+
+[module/info-pingrtt]
+type = custom/script
+exec = ~/.config/polybar/script/info-pingrtt.sh
+interval = 10
+
+[module/system-usb-udev]
+type = custom/script
+exec = ~/.config/polybar/script/system-usb-udev.sh
+tail = true
+click-left = ~/.config/polybar/script/system-usb-udev.sh --mount
+click-right = ~/.config/polybar/script/system-usb-udev.sh --unmount
+double-click-left = ~/.config/polybar/script/open_mount_point.sh
+click-middle = ~/.config/polybar/script/open_mount_point.sh
+
+[module/info-kernel]
+type = custom/script
+exec = uname -r
+label = %output%
+label-foreground = #0ff
+interval = 1024
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/script/polybar-forecast
+label = %output%
+label-foreground = ${colors.foreground-alt}
+exec-if = ping openweathermap.org -c 1
+interval = 600
+; label-font = 3
+
+[module/system-cpu-temppercore]
+type = custom/script
+exec = ~/.config/polybar/script/system-cpu-temppercore.sh
+interval = 60
+format = <label>
+label = %output%
+label-foreground = #77
 
 [module/split]
 type = custom/text
@@ -57,9 +129,9 @@ content-foreground = #e0ffff
 [module/progmenu]
 type = custom/menu
 format-underline = #6aafe6
-expand-right = false
-;format-spacing = 1
-;format-padding = 1
+expand-right = true
+; format-spacing = 1
+format-padding = 1
 label-open = 
 label-open-font = 2
 label-open-foreground = ${colors.blue}
@@ -67,45 +139,36 @@ label-close = 
 label-close-foreground = ${colors.red}
 label-separator = " "
 label-separator-foreground = ${colors.foreground-alt}
-menu-0-0 = 
-menu-0-0-foreground = ${colors.blue}
-menu-0-0-exec = alacritty -e ranger&
-;menu-0-1 = 
-;menu-0-1-foreground = ${colors.blue}
-;menu-0-1-exec = android-studio&
-menu-0-1 = 
-menu-0-1-foreground = ${colors.blue}
-menu-0-1-exec = tor-browser-ko &
-;menu-0-3 = 
-;menu-0-3-foreground = ${colors.blue}
-;menu-0-3-exec = github-desktop &
-menu-0-2 = 
+menu-0-0 = 
+menu-0-0-foreground = ${colors.red}
+menu-0-0-exec = menu-open-2
+menu-0-1 = 
+menu-0-1-foreground = ${colors.yellow}
+menu-0-1-exec = menu-open-1
+menu-0-2 = 
 menu-0-2-foreground = ${colors.blue}
-menu-0-2-exec = code &
-;menu-0-5 = 
-;menu-0-5-foreground = ${colors.blue}
-;menu-0-5-exec = discord &
-menu-0-3 = 
+menu-0-2-exec = alacritty -e ranger&
+menu-0-3 = 
 menu-0-3-foreground = ${colors.blue}
-menu-0-3-exec = hexchat &
-menu-0-4 = 
+menu-0-3-exec = tor-browser-ko &
+menu-0-4 = 
 menu-0-4-foreground = ${colors.blue}
-menu-0-4-exec = tusk &
-;menu-0-8 = 
-;menu-0-8-foreground = ${colors.blue}
-;menu-0-8-exec = firefox &
-menu-0-5 = 
+menu-0-4-exec = code &
+menu-0-5 = 
 menu-0-5-foreground = ${colors.blue}
-menu-0-5-exec = slack &
-menu-0-6 = 
+menu-0-5-exec = hexchat &
+menu-0-6 = 
 menu-0-6-foreground = ${colors.blue}
-menu-0-6-exec = google-chrome-beta &
-menu-0-7 = 
-menu-0-7-foreground = ${colors.yellow}
-menu-0-7-exec = menu-open-1
-menu-0-8 = 
-menu-0-8-foreground = ${colors.red}
-menu-0-8-exec = menu-open-2
+menu-0-6-exec = tusk &
+menu-0-7 = 
+menu-0-7-foreground = ${colors.blue}
+menu-0-7-exec = firefox &
+menu-0-8 = 
+menu-0-8-foreground = ${colors.blue}
+menu-0-8-exec = google-chrome-beta &
+menu-0-9 = 
+menu-0-9-foreground = ${colors.blue}
+menu-0-9-exec = slack &
 menu-1-0 = Reboot
 menu-1-0-exec = reboot &
 menu-1-1 = 
@@ -121,25 +184,14 @@ content = "
 content-foreground = ${colors.blue}
 click-left = 
 
-[module/blue-off]
+[module/bluetooth]
 type = custom/script
 interval = 2
 format = <label>
-format-foreground = #f00
-label = "%output:0:5%"
-exec = ~/.config/polybar/script/bluetooth-off-icon.sh
+label = "%output%"
+exec = ~/.config/polybar/script/bluetooth.sh
 click-left = blueberry &
-click-right = ~/.config/polybar/script/bluetooth-on.sh 
-
-[module/blue-on]
-type = custom/script
-interval = 2
-format = <label>
-format-foreground = ${colors.foreground-alt}
-label = "%output:0:5%"
-exec = ~/.config/polybar/script/bluetooth-on-icon.sh
-click-left = blueberry &
-click-right = ~/.config/polybar/script/bluetooth-off.sh 
+click-right = ~/.config/polybar/script/bluetooth-toggle.sh 
 
 [module/i3]
 type = internal/i3
@@ -193,21 +245,19 @@ label-disconnected =
 type = internal/network
 interface = wlo1
 interval = 3.0
+ping-interval = 3
 format-connected = <label-connected>
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 format-disconnected = <label-disconnected>
 format-disconnected-prefix = " "
 format-disconnected-prefix-foreground = #f00
-; label-connected = %{A1:nm-connection-editor:}%essid%%{A}
-label-connected = %{A1:alacritty -e nmtui:}%{A3:~/.config/polybar/script/wifi-off.sh:}%essid%%{A}%{A}
+label-connected = %essid% %{F#77}(%local_ip%)
 label-connected-foreground = ${colors.foreground}
-; label-disconnected = %{A1:alacritty -e nmtui:}N/A%{A}
-label-disconnected = %{A1:alacritty -e nmtui:}%{A3:~/.config/polybar/script/wifi-on.sh:}N/A%{A}%{A}
-; label-disconnected = %{A1:nm-connection-editor:}N/A%{A}
+label-disconnected = N/A
 label-disconnected-foreground = #f00
-;format-connected-padding = 1
-;format-disconnected-padding = 1
+; format-connected-padding = 1
+; format-disconnected-padding = 1
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -233,8 +283,7 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.foreground-alt}
-;format-volume-padding = 1
-;label-connected = %{A1:nm-connection-editor:}%essid%%{A}
+; format-volume-padding = 1
 
 [module/battery]
 type = internal/battery
@@ -342,6 +391,7 @@ ramp-1 = 🌔
 ramp-2 = 🌓
 ramp-3 = 🌒
 ramp-4 = 🌑
+format-padding = 1
 
 [module/powermenu]
 type = custom/menu
@@ -476,60 +526,25 @@ ramp-used-7-foreground = #f00
 
 [module/temperature]
 type = internal/temperature
-; Seconds to sleep between updates
-; Default: 1
-; interval = 0.5
-; Thermal zone to use
-; To list all the zone types, run
-; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
-; Default: 0
-; thermal-zone = 0
-; Full path of temperature sysfs path
-; Use `sensors` to find preferred temperature source, then run
-; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
-; to find path to desired file
-; Default reverts to thermal zone setting
-; hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
-; Threshold temperature to display warning label (in degrees celsius)
-; Default: 80
 warn-temperature = 70
-; Whether or not to show units next to the temperature tokens (°C, °F)
-; Default: true
-; units = false
-; Available tags:
-;   <label> (default)
-;   <ramp>
-format = <label>
+format = <label> <ramp>
 format-prefix = "TEMP "
 format-prefix-foreground = ${colors.foreground-alt}
-; format = <ramp> <label>
-; Available tags:
-;   <label-warn> (default)
-;   <ramp>
-format-warn = <label-warn>
+format-warn = <label-warn> <ramp>
 format-warn-prefix = "TEMP "
 format-warn-prefix-foreground = ${colors.red}
-; Available tokens:
-;   %temperature% (deprecated)
-;   %temperature-c%   (default, temperature in °C)
-;   %temperature-f%   (temperature in °F)
 label = %temperature-c%
-; Available tokens:
-;   %temperature% (deprecated)
-;   %temperature-c%   (default, temperature in °C)
-;   %temperature-f%   (temperature in °F)
 label-warn = %temperature-c%
 label-warn-foreground = #f00
-; Requires the <ramp> tag
-; The icon selection will range from 0 to `warn-temperature`,
-; temperatures above `warn-temperature` will use the last icon
-; and temperatures below 0°C will use `ramp-0`
-ramp-0 = A 
-ramp-1 = B
-ramp-2 = C
-ramp-foreground = #55
-
-
+; ramp-foreground = #55
+ramp-0 = N
+ramp-0-foreground = #55
+ramp-1 = L
+ramp-1-foreground = #0f0
+ramp-2 = M
+ramp-2-foreground = #ff0
+ramp-3 = H
+ramp-3-foreground = #f00
 
 [settings]
 screenchange-reload = true
