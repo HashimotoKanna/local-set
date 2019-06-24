@@ -31,24 +31,16 @@ module-margin-left = 1
 module-margin-right = 1
 locale = ko_KR.UTF-8
 font-0 = Inconsolata:size=12;1
-font-1 = NanumSquareRound:size=12;1
-font-2 = Monapo:size=12;1
-font-3 = Wuncon Siji:size=12;1
-font-4 = FontAwesome:size=12;1
-font-5 = Material Icons:size=12;1
-font-6 = Weather Icons:size=12;1
+font-1 = Inconsolata:size=12;1
+font-2 = Material Icons:size=12;1
+font-3 = FontAwesome:size=12;1
+font-4 = Weather Icons:size=10;1
+font-5 = NanumSquareRound:size=12;1
+font-6 = Monapo:size=12;1
+font-7 = Wuncon Siji:size=12;1
 modules-left = i3 xwindow 
 modules-center = clock weekday-sun weekday-sat weekday calender weather
 modules-right = bluetooth wlan eth info-pingrtt backlight volume battery bottombar
-
-[module/weather]
-type = custom/script
-exec = ~/.config/polybar/script/polybar-forecast
-label = %output%
-label-font = 7
-label-foreground = ${colors.foreground-alt}
-exec-if = ping openweathermap.org -c 1
-interval = 600
 
 [bar/bottom]
 monitor = eDP1
@@ -154,7 +146,7 @@ menu-0-1-foreground = ${colors.yellow}
 menu-0-1-exec = menu-open-1
 menu-0-2 = 
 menu-0-2-foreground = ${colors.blue}
-menu-0-2-exec = alacritty -e ranger&
+menu-0-2-exec = alacritty -e ranger ~ &
 menu-0-3 = 
 menu-0-3-foreground = ${colors.blue}
 menu-0-3-exec = tor-browser-ko &
@@ -176,6 +168,9 @@ menu-0-8-exec = google-chrome-beta &
 menu-0-9 = 
 menu-0-9-foreground = ${colors.blue}
 menu-0-9-exec = slack &
+menu-0-10 = 
+menu-0-10-foreground = ${colors.blue}
+menu-0-10-exec = alacritty --working-directory ~
 menu-1-0 = Reboot
 menu-1-0-exec = reboot &
 menu-1-1 = 
@@ -552,6 +547,15 @@ ramp-2 = M
 ramp-2-foreground = #ff0
 ramp-3 = H
 ramp-3-foreground = #f00
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/script/polybar-forecast
+label = %output%
+label-font = 5
+label-foreground = ${colors.foreground-alt}
+exec-if = ping openweathermap.org -c 1
+interval = 600
 
 [settings]
 screenchange-reload = true
