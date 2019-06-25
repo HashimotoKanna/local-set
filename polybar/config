@@ -387,7 +387,7 @@ label-foreground = #0ff
 [module/backlight]
 type = internal/xbacklight
 format = <ramp> <label>
-label = %{A1:xbacklight -set 10:}%{A3:xbacklight -set 100:}%{A5:xbacklight -dec 15:}%{A4:xbacklight -inc 15:}%percentage:2:3%%%{A}%{A}%{A}%{A}
+label = %{A1:~/.config/polybar/script/backlight-toogle.sh:}%{A5:xbacklight -dec 15:}%{A4:xbacklight -inc 15:}%percentage:2:3%%%{A}%{A}%{A}%{A}
 format-foreground = ${colors.cyan}
 label-foreground = ${colors.white}
 ramp-0 = 🌕
