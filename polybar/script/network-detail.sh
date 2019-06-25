@@ -57,7 +57,7 @@ while true; do
     printf "%s " "%{F#0ff}｜"
     printf "%s " "%{F#30a9de}PUBLIC%{F-} %{F#fff}$PUBLIC_IP" 
     printf "%s " "%{F#0ff}｜"
-    printf "%s\n" "%{F#30a9de}GATEWAY%{F-} %{F#fff}$GATEWAY_IP"
+    printf "%s\n" "%{F#30a9de}GATE%{F-} %{F#fff}$GATEWAY_IP"
     #printf "| %s | " "%{F#0f0}PUBLIC%{F-} %{F#0ff}$PUBLIC_IP" 
     #printf "%s\n" "%{F#0f0}GATEWAY%{F-} %{F#0ff}$GATEWAY_IP"
 
