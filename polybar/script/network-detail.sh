@@ -17,8 +17,7 @@ print_bytes() {
 }
 
 INTERVAL=2
-INTERFACES="wlo1"
-PUBLIC_IP=$(curl ifconfig.co)
+INTERFACES="wlo1" PUBLIC_IP=$(curl ifconfig.co)
 GATEWAY_IP=$(ip route | grep default | cut -d ' ' -f 3)
 
 declare -A bytes
@@ -46,8 +45,15 @@ while true; do
         bytes[past_tx_$interface]=${bytes[now_tx_$interface]}
     done
 
+    if [ -z "$PUBLIC_IP" ];then
+        PUBLIC_IP=$(curl ifconfig.co)
+    fi
+    if [ -z "$GATEWAY_IP" ]; then
+        GATEWAY_IP=$(ip route | grep default | cut -d ' ' -f 3)
+    fi
+
     printf "%s %s " "%{F#30a9de}%{F-}" $(print_bytes $down)
-    printf "%s %s" "%{F#30a9de}%{F-}" $(print_bytes $up)
+    printf "%s %s " "%{F#30a9de}%{F-}" $(print_bytes $up)
     printf "%s " "%{F#0ff}｜"
     printf "%s " "%{F#30a9de}PUBLIC%{F-} %{F#fff}$PUBLIC_IP" 
     printf "%s " "%{F#0ff}｜"
