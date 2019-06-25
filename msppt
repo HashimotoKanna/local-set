@@ -1,0 +1,2 @@
+#!/bin/sh
+WINEPREFIX="$HOME/.PlayOnLinux/wineprefix/Office2010" nohup wine $HOME/.PlayOnLinux//wineprefix/Office2010/dosdevices/c:/Program\ Files/Microsoft\ Office/Office14/POWERPNT.EXE `mspath $PWD/$1` 2>&1 > /dev/null &
