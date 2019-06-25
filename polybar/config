@@ -60,9 +60,11 @@ module-margin-right = 1
 locale = ko_KR.UTF-8
 font-0 = Inconsolata:size=12;1
 font-1 = FontAwesome:size=12;1
-modules-left = progmenu info-kernel system-uptime-pretty system-usb-udev 
-modules-center = cpu memory temperature system-cpu-temppercore 
-modules-right = info-ssh-sessions info-trash 
+font-2 = NanumSquareRound:size=12;1
+modules-left = progmenu info-kernel system-uptime-pretty info-trash system-usb-udev info-ssh-sessions
+modules-center = cpu memory temperature 
+; system-cpu-temppercore 
+modules-right =  network-detail
 tray-position = right
 tray-maxsize = 16
 
@@ -226,7 +228,7 @@ label-urgent-padding = ${self.label-focused-padding}
 
 [module/xwindow]
 type = internal/xwindow
-label = %{A1:rofi -config /home/dolly/.config/rofi/config_bspwm -width 27 -show window:}%title:0:70:...%%{A}
+label = %{A1:rofi -config /home/dolly/.config/rofi/config_bspwm -width 27 -show window:}%title:0:55:...%%{A}
 label-font = 1
 label-underline = #feee7d
 
@@ -393,7 +395,7 @@ ramp-1 = 🌔
 ramp-2 = 🌓
 ramp-3 = 🌒
 ramp-4 = 🌑
-format-padding = 1
+; format-padding = 1
 
 [module/powermenu]
 type = custom/menu
@@ -541,12 +543,16 @@ label-warn-foreground = #f00
 ; ramp-foreground = #55
 ramp-0 = N
 ramp-0-foreground = #55
-ramp-1 = L
+ramp-1 = LL
 ramp-1-foreground = #0f0
-ramp-2 = M
-ramp-2-foreground = #ff0
-ramp-3 = H
-ramp-3-foreground = #f00
+ramp-2 = L
+ramp-2-foreground = #0f0
+ramp-3 = L
+ramp-3-foreground = #0f0
+ramp-4 = M
+ramp-4-foreground = #ff0
+ramp-5 = H
+ramp-5-foreground = #f00
 
 [module/weather]
 type = custom/script
@@ -555,7 +561,12 @@ label = %output%
 label-font = 5
 label-foreground = ${colors.foreground-alt}
 exec-if = ping openweathermap.org -c 1
-interval = 600
+interval = 60
+
+[module/network-detail]
+type = custom/script
+exec = ~/.config/polybar/script/network-detail.sh
+tail = true
 
 [settings]
 screenchange-reload = true

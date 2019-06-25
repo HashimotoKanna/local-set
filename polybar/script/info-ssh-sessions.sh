@@ -14,5 +14,5 @@ if [ -n "$sessions" ]; then
     done
     echo $result
 else
-    echo "%{F#30a9de}%{F-} 0"
+    echo "%{F#77}%{F-} 0"
 fi

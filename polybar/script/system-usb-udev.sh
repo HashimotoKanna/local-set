@@ -2,7 +2,7 @@
 
 usb_print() {
     devices=$(lsblk -Jplno NAME,TYPE,RM,SIZE,MOUNTPOINT,VENDOR)
-    output="%{F#30a9de}%{F-}"
+    output=""
     counter=0
 
     for unmounted in $(echo "$devices" | jq -r '.blockdevices[] | select(.type == "part") | select(.rm == true) | select(.mountpoint == null) | .name'); do
@@ -31,6 +31,14 @@ usb_print() {
         output="$output$space %{F#0f0}$mounted%{F-}"
     done
 
+    if [ $counter -eq 0 ]; then
+        prefix="%{F#bb}%{F-}"
+        output="$prefix$output %{F#66}N/A%{F-}"
+    else
+        prefix="%{F#30a9de}%{F-}"
+        output="$prefix$output"
+    fi
+
     echo "$output"
 }
 
@@ -42,7 +50,7 @@ usb_update() {
     fi
 }
 
-path_pid="/home/chansol0505/.config/polybar/script/system-usb-udev.pid"
+path_pid="$HOME/.config/polybar/script/system-usb-udev.pid"
 
 case "$1" in
     --update)
