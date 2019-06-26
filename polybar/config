@@ -61,9 +61,8 @@ locale = ko_KR.UTF-8
 font-0 = Inconsolata:size=12;1
 font-1 = FontAwesome:size=12;1
 font-2 = NanumSquareRound:size=12;1
-modules-left = progmenu info-kernel system-uptime-pretty info-trash system-usb-udev info-ssh-sessions
+modules-left = progmenu info-kernel system-uptime-pretty filesystem info-trash system-usb-udev info-ssh-sessions
 modules-center = cpu memory temperature 
-; system-cpu-temppercore 
 modules-right =  network-detail
 tray-position = right
 tray-maxsize = 16
@@ -112,15 +111,6 @@ exec = uname -r
 label = %output%
 label-foreground = #0ff
 interval = 1024
-
-
-[module/system-cpu-temppercore]
-type = custom/script
-exec = ~/.config/polybar/script/system-cpu-temppercore.sh
-interval = 60
-format = <label>
-label = %output%
-label-foreground = #77
 
 [module/split]
 type = custom/text
@@ -464,45 +454,6 @@ ramp-coreload-5 = ▆
 ramp-coreload-6 = ▇
 ramp-coreload-7 = █
 
-[module/filesystem]
-type = internal/fs
-; Mountpoints to display
-mount-0 = /
-; Seconds to sleep between updates
-; Default: 30
-interval = 10
-; Display fixed precision values
-; Default: false
-fixed-values = true
-; Spacing between entries
-; Default: 2
-spacing = 4
-; Available tags:
-;   <label-mounted> (default)
-;   <bar-free>
-;   <bar-used>
-;   <ramp-capacity>
-format-mounted = <label-mounted>
-; Available tags:
-;   <label-unmounted> (default)
-format-unmounted = <label-unmounted>
-; Available tokens:
-;   %mountpoint%
-;   %type%
-;   %fsname%
-;   %percentage_free%
-;   %percentage_used%
-;   %total%
-;   %free%
-;   %used%
-; Default: %mountpoint% %percentage_free%%
-label-mounted = %mountpoint%: %percentage_free%% of %total%
-; Available tokens:
-;   %mountpoint%
-; Default: %mountpoint% is not mounted
-label-unmounted = %mountpoint%: not mounted
-label-unmounted-foreground = #55
-
 [module/memory]
 type = internal/memory
 interval = 3
@@ -567,6 +518,17 @@ interval = 60
 type = custom/script
 exec = ~/.config/polybar/script/network-detail.sh
 tail = true
+
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+mount-1 = /home/ffive
+interval = 10
+fixed-values = true
+spacing = 2
+format-mounted = <label-mounted>
+label-mounted = "%{F#30a9de}%mountpoint%%{F-} %{F#ff}%percentage_used%%"
+; label-mounted = "%{F${colors.foreground-alt}}%mountpoint% %{F-} %{F#f00}%percentage_used%%" %{F-}
 
 [settings]
 screenchange-reload = true
