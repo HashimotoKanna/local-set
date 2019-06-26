@@ -61,6 +61,7 @@ locale = ko_KR.UTF-8
 font-0 = Inconsolata:size=12;1
 font-1 = FontAwesome:size=12;1
 font-2 = NanumSquareRound:size=12;1
+font-3 = Wuncon Siji:size=12;1
 modules-left = progmenu info-kernel system-uptime-pretty filesystem info-trash system-usb-udev info-ssh-sessions
 modules-center = cpu memory temperature 
 modules-right =  network-detail
@@ -527,8 +528,8 @@ interval = 10
 fixed-values = true
 spacing = 2
 format-mounted = <label-mounted>
-label-mounted = "%{F#30a9de}%mountpoint%%{F-} %{F#ff}%percentage_used%%"
-; label-mounted = "%{F${colors.foreground-alt}}%mountpoint% %{F-} %{F#f00}%percentage_used%%" %{F-}
+label-mounted = "%{F#0ff}%mountpoint%%{F-} %{F#ff}%percentage_used%%"
+; label-mounted = "%{F#30a9de}%mountpoint%%{F-} %{F#ff}%percentage_used%%"
 
 [settings]
 screenchange-reload = true

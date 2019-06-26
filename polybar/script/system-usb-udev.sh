@@ -34,12 +34,12 @@ usb_print() {
     if [ $counter -eq 0 ]; then
         prefix="%{F#bb}%{F-}"
         output="$prefix$output %{F#66}N/A%{F-}"
+        echo "$output"
     else
         prefix="%{F#30a9de}%{F-}"
         output="$prefix$output"
+        echo "$output"
     fi
-
-    echo "$output"
 }
 
 usb_update() {
@@ -92,7 +92,7 @@ case "$1" in
         while true; do
             usb_print
 
-            sleep 60 &
+            sleep 2 &
             wait
         done
         ;;

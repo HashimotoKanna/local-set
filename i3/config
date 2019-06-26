@@ -152,8 +152,8 @@ bindsym $mod+r mode "resize"
 bindsym $mod+t exec google-chrome-beta
 bindsym $mod+c exec code
 bindsym $mod+o exec tusk
-bindsym $mod+n workspace next
-bindsym $mod+p workspace prev
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+a exec rangera
 # bindsym $mod+Shift+b exec ~/.config/i3/toggle_bottom_bar.sh
 bindsym $mod+m exec toggle_bottom_bar.sh
@@ -181,6 +181,6 @@ exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id watch -n 3600 feh --randomize --bg-fill ~/Pictures/ani/*
 exec --no-startup-id ~/.config/polybar/start.sh
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
-exec --no-startup-id dropbox
+exec --no-startup-id ~/.dropbox-dist/dropboxd
 # exec --no-startup-id google-chrome-beta
 exec --no-startup-id alacritty
