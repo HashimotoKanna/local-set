@@ -27,12 +27,12 @@ nmap <silent> <C-p> :NERDTreeToggle<CR>
 nmap <silent> <C-Up> :resize -5<CR>
 nmap <silent> <C-Down> :resize +5<CR>
 nmap <silent> <C-Left> :vertical resize -5<CR>
+nmap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 nmap <silent> <C-Right> :vertical resize +5<CR>
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-l> :wincmd l<CR>
-nmap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 cnoreabbrev install PluginInstall
 cnoreabbrev list PluginList
@@ -58,6 +58,8 @@ let NERDTreeShowHidden=1
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -72,5 +74,6 @@ Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'fidian/hexmode'
 Plugin 'phanviet/vim-monokai-pro'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'tpope/vim-eunuch'
 call vundle#end()            " required
 filetype plugin indent on    " required

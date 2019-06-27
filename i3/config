@@ -155,8 +155,8 @@ bindsym $mod+o exec tusk
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+a exec rangera
-# bindsym $mod+Shift+b exec ~/.config/i3/toggle_bottom_bar.sh
-bindsym $mod+m exec toggle_bottom_bar.sh
+bindsym $mod+m exec ~/.config/i3/toggle_bar.sh --bottom
+bindsym $mod+n exec ~/.config/i3/toggle_bar.sh --top
 bindsym $mod+Shift+n exec reboot
 bindsym $mod+Shift+m exec shutdown now
 
