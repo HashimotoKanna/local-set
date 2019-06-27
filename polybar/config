@@ -40,7 +40,7 @@ font-6 = Monapo:size=12;1
 font-7 = Wuncon Siji:size=12;1
 modules-left = i3 xwindow 
 modules-center = clock weekday-sun weekday-sat weekday calender weather
-modules-right = bluetooth wlan eth info-pingrtt backlight volume battery bottombar
+modules-right = xkeyboard  keyboard bluetooth wlan eth info-pingrtt backlight volume battery bottombar
 
 [bar/bottom]
 monitor = eDP1
@@ -254,16 +254,6 @@ label-disconnected-foreground = #f00
 ; format-connected-padding = 1
 ; format-disconnected-padding = 1
 
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-label-layout = %layout%
-label-indicator-padding = 1
-label-indicator-margin = 1
-label-indicator-foreground = ${colors.red}
-label-indicator-background = ${colors.background} 
 
 [module/volume]
 type = internal/alsa
@@ -529,7 +519,15 @@ fixed-values = true
 spacing = 2
 format-mounted = <label-mounted>
 label-mounted = "%{F#0ff}%mountpoint%%{F-} %{F#ff}%percentage_used%%"
-; label-mounted = "%{F#30a9de}%mountpoint%%{F-} %{F#ff}%percentage_used%%"
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+format = <label-layout> <label-indicator>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+label-layout = %layout%
+label-indicator-foreground = #f00
 
 [settings]
 screenchange-reload = true

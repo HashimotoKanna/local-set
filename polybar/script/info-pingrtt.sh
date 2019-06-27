@@ -2,8 +2,9 @@
 HOST=8.8.8.8
 #HOST=127.43.12.64
 
-if ! ping=$(ping -n -c 1 -W 1 $HOST); then
-    echo "# ping failed"
+if ! ping=$(ping -n -c 1 -W 1 $HOST 2> /dev/null); then
+    icon="%{F#55} -%{F-}"
+    echo "$icon %{F#bb}ms%{F-}"
 else
     rtt=$(echo "$ping" | sed -rn 's/.*time=([0-9]{1,})\.?[0-9]{0,} ms.*/\1/p')
 
