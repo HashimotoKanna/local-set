@@ -1,0 +1,3 @@
+[submodule "notDE"]
+	path = notDE
+	url = https://github.com/nffive/dotfiles-no-de
