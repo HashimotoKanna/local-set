@@ -116,6 +116,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+bindsym $mod+Shift+t exec ~/.config/i3/restart_polybar.sh
 bindsym $mod+Shift+w reload
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exit
@@ -159,6 +160,7 @@ bindsym $mod+m exec ~/.config/i3/toggle_bar.sh --bottom
 bindsym $mod+n exec ~/.config/i3/toggle_bar.sh --top
 bindsym $mod+Shift+n exec reboot
 bindsym $mod+Shift+m exec shutdown now
+bindsym $mod+z exec blueberry
 
 # laptop function button binding
 bindsym XF86MonBrightnessUp exec xbacklight -inc 15

@@ -16,7 +16,7 @@ print_bytes() {
     echo "$bytes"
 }
 
-INTERVAL=2
+INTERVAL=3
 INTERFACES="wlo1" PUBLIC_IP=$(curl ifconfig.co)
 GATEWAY_IP=$(ip route | grep default | cut -d ' ' -f 3)
 

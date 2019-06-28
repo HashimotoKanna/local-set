@@ -63,7 +63,7 @@ font-1 = FontAwesome:size=12;1
 font-2 = NanumSquareRound:size=12;1
 font-3 = Wuncon Siji:size=12;1
 modules-left = progmenu info-kernel system-uptime-pretty filesystem info-trash system-usb-udev info-ssh-sessions
-modules-center = cpu memory temperature 
+modules-center = cpu memory temperature proc-count
 modules-right =  network-detail
 tray-position = right
 tray-maxsize = 16
@@ -96,6 +96,15 @@ interval = 5
 type = custom/script
 exec = ~/.config/polybar/script/info-pingrtt.sh
 interval = 10
+
+[module/proc-count]
+type = custom/script
+exec = ~/.config/polybar/script/proc_count.sh
+format = <label>
+format-prefix = "PROC "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %output%
+interval = 3
 
 [module/system-usb-udev]
 type = custom/script
@@ -219,8 +228,7 @@ label-urgent-padding = ${self.label-focused-padding}
 
 [module/xwindow]
 type = internal/xwindow
-label = %{A1:rofi -config /home/dolly/.config/rofi/config_bspwm -width 27 -show window:}%title:0:55:...%%{A}
-label-font = 1
+label = %{A1:rofi -width 27 -show window:}%title:0:45:...%%{A}
 label-underline = #feee7d
 
 [module/eth]
@@ -408,7 +416,7 @@ menu-2-1-exec = menu-open-0
 type = internal/cpu
 ; Seconds to sleep between updates
 ; Default: 1
-; interval = 0.5
+interval = 3
 ; Available tags:
 ;   <label> (default)
 ;   <bar-load>
@@ -491,10 +499,22 @@ ramp-2 = L
 ramp-2-foreground = #0f0
 ramp-3 = L
 ramp-3-foreground = #0f0
-ramp-4 = M
-ramp-4-foreground = #ff0
-ramp-5 = H
-ramp-5-foreground = #f00
+ramp-4 = L
+ramp-4-foreground = #0f0
+ramp-5 = M
+ramp-5-foreground = #ff0
+ramp-6 = M
+ramp-6-foreground = #ff0
+ramp-7 = M
+ramp-7-foreground = #ff0
+ramp-8 = M
+ramp-8-foreground = #ff0
+ramp-9 = M
+ramp-9-foreground = #ff0
+ramp-11 = M
+ramp-11-foreground = #ff0
+ramp-12 = H
+ramp-12-foreground = #f00
 
 [module/weather]
 type = custom/script
@@ -522,7 +542,6 @@ label-mounted = "%{F#0ff}%mountpoint%%{F-} %{F#ff}%percentage_used%%"
 
 [module/xkeyboard2]
 type = internal/xkeyboard
-blacklist-0 = num lock
 format = <label-indicator>
 label-indicator-foreground = #f00
 

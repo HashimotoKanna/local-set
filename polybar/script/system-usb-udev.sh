@@ -1,5 +1,7 @@
 #!/bin/sh
 
+INTERVAL=3
+
 usb_print() {
     devices=$(lsblk -Jplno NAME,TYPE,RM,SIZE,MOUNTPOINT,VENDOR)
     output=""
@@ -92,7 +94,7 @@ case "$1" in
         while true; do
             usb_print
 
-            sleep 2 &
+            sleep $INTERVAL &
             wait
         done
         ;;
