@@ -62,7 +62,7 @@ font-0 = Inconsolata:size=12;1
 font-1 = FontAwesome:size=12;1
 font-2 = NanumSquareRound:size=12;1
 font-3 = Wuncon Siji:size=12;1
-modules-left = progmenu info-kernel system-uptime-pretty filesystem info-trash system-usb-udev info-ssh-sessions
+modules-left = progmenu info-kernel system-uptime-pretty filesystem system-usb-udev info-ssh-sessions
 modules-center = cpu memory temperature proc-count
 modules-right =  network-detail
 tray-position = right
@@ -72,7 +72,7 @@ tray-maxsize = 16
 type = custom/text
 content = ""
 content-foreground = ${colors.blue}
-click-left = toggle_bottom_bar.sh
+click-left = ~/.config/i3/toggle_bar.sh --bottom
 
 [module/system-uptime-pretty]
 type = custom/script
@@ -117,7 +117,8 @@ click-middle = ~/.config/polybar/script/open_mount_point.sh
 
 [module/info-kernel]
 type = custom/script
-exec = uname -r
+; exec = uname -r
+exec = uname -s
 label = %output%
 label-foreground = #0ff
 interval = 1024
@@ -501,10 +502,10 @@ ramp-3 = L
 ramp-3-foreground = #0f0
 ramp-4 = L
 ramp-4-foreground = #0f0
-ramp-5 = M
-ramp-5-foreground = #ff0
-ramp-6 = M
-ramp-6-foreground = #ff0
+ramp-5 = L
+ramp-5-foreground = #0f0
+ramp-6 = L
+ramp-6-foreground = #0f0
 ramp-7 = M
 ramp-7-foreground = #ff0
 ramp-8 = M
