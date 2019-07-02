@@ -1,9 +1,13 @@
 #!/bin/bash
 day=`date +%w`
-if [ ! $day == "0" ] && [ ! $day == "6" ]
-then
-	  echo `date +%a`
-else
-	  echo ""
-fi
-
+case "$day" in
+"0")
+echo `date +%a`
+;;
+"6")
+echo `date +%a`
+;;
+*)
+echo `date +%a`
+;;
+esac

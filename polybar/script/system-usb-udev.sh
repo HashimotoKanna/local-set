@@ -33,14 +33,14 @@ usb_print() {
         output="$output$space %{F#0f0}$mounted%{F-}"
     done
 
-    if [ $counter -eq 0 ]; then
-        prefix="%{F#bb}%{F-}"
-        output="$prefix$output %{F#66}N/A%{F-}"
-        echo "$output"
-    else
+    if [ ! $counter -eq 0 ]; then
         prefix="%{F#30a9de}%{F-}"
         output="$prefix$output"
         echo "$output"
+    #else
+        #prefix="%{F#bb}%{F-}"
+        #output="$prefix$output %{F#66}N/A%{F-}"
+        #echo "$output"
     fi
 }
 
