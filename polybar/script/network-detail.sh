@@ -46,24 +46,14 @@ while true; do
         bytes[past_tx_$interface]=${bytes[now_tx_$interface]}
     done
 
-    #if [ -z "$PUBLIC_IP" ];then
-        #PUBLIC_IP=$(curl ifconfig.co)
-    #fi
-    #if [ -z "$GATEWAY_IP" ]; then
-        #GATEWAY_IP=$(ip route | grep default | cut -d ' ' -f 3)
-    #fi
     GATEWAY_IP_TMP=$(ip route | grep default | cut -d ' ' -f 3)
     if [ ! $GATEWAY_IP == $GATEWAY_IP_TMP ]; then
-        GATEWAY_IP_TMP=$GATEWAY_IP_TMP
-        PUBLIC_IP=$(curl ifconfig.co)
+        GATEWAY_IP=$GATEWAY_IP_TMP
+        PUBLIC_IP=$(curl ifconfig.co 2>&1 > /dev/null)
     fi
-        
-
-    GATEWAY_IP=$(ip route | grep default | cut -d ' ' -f 3)
 
     printf "%s %s " "%{F#30a9de}%{F-}" $(print_bytes $down)
     printf "%s %s " "%{F#30a9de}%{F-}" $(print_bytes $up)
-    #printf "%s " "%{F#0ff}"
     printf "%s " "%{F#30a9de}PUB%{F-} %{F#fff}$PUBLIC_IP" 
     printf "%s " "%{F#0ff}"
     printf "%s\n" "%{F#30a9de}GATE%{F-} %{F#fff}$GATEWAY_IP"

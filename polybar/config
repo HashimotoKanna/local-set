@@ -40,7 +40,7 @@ font-6 = Monapo:size=12;1
 font-7 = Wuncon Siji:size=12;1
 modules-left = i3 xwindow 
 modules-center = clock weekday calender weather
-modules-right = xkeyboard2 xkeyboard keyboard bluetooth wlan eth info-pingrtt backlight volume battery bottombar
+modules-right = xkeyboard2 xkeyboard keyboard bluetooth wlan eth info-pingrtt backlight volume battery 
 
 [bar/bottom]
 monitor = eDP1
@@ -67,12 +67,6 @@ modules-center = cpu memory temperature proc-count
 modules-right =  network-detail
 tray-position = right
 tray-maxsize = 16
-
-[module/bottombar]
-type = custom/text
-content = ""
-content-foreground = ${colors.blue}
-click-left = ~/.config/i3/toggle_bar.sh --bottom
 
 [module/system-uptime-pretty]
 type = custom/script
