@@ -18,7 +18,7 @@ print_bytes() {
 
 INTERVAL=3
 INTERFACES="wlo1" 
-PUBLIC_IP=$(curl ifconfig.co)
+PUBLIC_IP=$(curl ifconfig.co 2> /dev/null)
 GATEWAY_IP=$(ip route | grep default | cut -d ' ' -f 3)
 
 declare -A bytes
@@ -47,9 +47,11 @@ while true; do
     done
 
     GATEWAY_IP_TMP=$(ip route | grep default | cut -d ' ' -f 3)
-    if [ ! $GATEWAY_IP == $GATEWAY_IP_TMP ]; then
+    if [ ! $GATEWAY_IP == $GATEWAY_IP_TMP ] ||\
+       [ -z $GATEWAY_IP ] ||\
+       [ -z $PUBLIC_IP ]; then
         GATEWAY_IP=$GATEWAY_IP_TMP
-        PUBLIC_IP=$(curl ifconfig.co 2>&1 > /dev/null)
+        PUBLIC_IP=$(curl ifconfig.co 2> /dev/null)
     fi
 
     printf "%s %s " "%{F#30a9de}%{F-}" $(print_bytes $down)

@@ -161,6 +161,7 @@ bindsym $mod+n exec ~/.config/i3/toggle_bar.sh --top
 bindsym $mod+Shift+n exec reboot
 bindsym $mod+Shift+m exec shutdown now
 bindsym $mod+z exec blueberry
+bindsym $mod+Shift+p exec ~/.config/i3/adjust_alacritty_font_size.sh
 
 # laptop function button binding
 bindsym XF86MonBrightnessUp exec xbacklight -inc 15
@@ -174,15 +175,17 @@ bindsym --whole-window button9 kill
 
 # i3-gaps
 for_window [class=".*"] border pixel 0
-gaps inner 8
-gaps outer 0
+gaps inner 4
+#gaps outer 0
 #smart_gaps on
 
 exec --no-startup-id nm-applet
+exec --no-startup-id blueberry-tray
+exec --no-startup-id /usr/lib/blueberry/blueberry-obex-agent.py
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id watch -n 3600 feh --randomize --bg-fill ~/Pictures/wallpaper-home/*
 exec --no-startup-id ~/.config/polybar/start.sh
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
 exec --no-startup-id ~/.dropbox-dist/dropboxd
 # exec --no-startup-id google-chrome-beta
-exec --no-startup-id alacritty
+# exec --no-startup-id alacritty

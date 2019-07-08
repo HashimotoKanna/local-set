@@ -3,10 +3,10 @@
 case "$1" in
 *)
 state=$(xbacklight)
-if [ $state == "10.000000" ]; then
+if [ $state == "5.000000" ]; then
     xbacklight -set 100
 else
-    xbacklight -set 10
+    xbacklight -set 5
 fi
 ;;
 --inc)

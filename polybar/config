@@ -15,7 +15,7 @@ cyan = #8ABEB7
 white = #ECEDEC
 
 [bar/top]
-monitor = eDP1
+monitor = 
 width = 100%
 height = 32
 fixed-center = true
@@ -40,10 +40,10 @@ font-6 = Monapo:size=12;1
 font-7 = Wuncon Siji:size=12;1
 modules-left = i3 xwindow 
 modules-center = clock weekday calender weather
-modules-right = xkeyboard2 xkeyboard keyboard bluetooth wlan eth info-pingrtt backlight volume battery 
+modules-right = xkeyboard2 xkeyboard bluetooth wlan eth info-pingrtt backlight volume battery 
 
 [bar/bottom]
-monitor = eDP1
+monitor = 
 width = 100%
 height = 30
 fixed-center = true
@@ -62,7 +62,7 @@ font-0 = Inconsolata:size=12;1
 font-1 = FontAwesome:size=12;1
 font-2 = NanumSquareRound:size=12;1
 font-3 = Wuncon Siji:size=12;1
-modules-left = progmenu info-kernel system-uptime-pretty filesystem info-trash system-usb-udev info-ssh-sessions
+modules-left = progmenu info-kernel system-uptime-pretty info-monitor filesystem system-usb-udev info-ssh-sessions
 modules-center = cpu memory temperature proc-count
 modules-right =  network-detail
 tray-position = right
@@ -109,6 +109,12 @@ click-right = ~/.config/polybar/script/system-usb-udev.sh --unmount
 double-click-left = alacritty -e ranger /run/media/$user/
 ; ~/.config/polybar/script/open_mount_point.sh
 click-middle = ~/.config/polybar/script/open_mount_point.sh
+
+[module/info-monitor]
+type = custom/text
+content = 
+content-foreground = #0ff
+click-left = arandr &
 
 [module/info-kernel]
 type = custom/script
@@ -224,7 +230,7 @@ label-underline = #feee7d
 
 [module/eth]
 type = internal/network
-interface = enp0s25
+interface = enp1s0f1
 interval = 3.0
 format-connected = <label-connected>
 format-connected-prefix = " "
@@ -496,7 +502,7 @@ tail = true
 [module/filesystem]
 type = internal/fs
 mount-0 = /
-mount-1 = /home/ffive
+; mount-1 = /home/ffive
 interval = 10
 fixed-values = true
 spacing = 2
