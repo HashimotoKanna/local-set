@@ -118,7 +118,7 @@ click-left = arandr &
 
 [module/info-kernel]
 type = custom/script
-exec = ~/repo/csrepo/dotfiles-no-de/getdistro.sh
+exec = cat /etc/os-release | grep "^ID=" | cut -d\= -f2 | sed -e 's/"//g' | tr [a] [A]
 ; uname -r
 ; exec = uname -s
 label = %output%
