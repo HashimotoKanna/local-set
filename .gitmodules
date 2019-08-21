@@ -1,3 +1,6 @@
 [submodule "notDE"]
 	path = notDE
 	url = https://github.com/nffive/dotfiles-no-de
+[submodule "cli"]
+	path = cli
+	url = https://github.com/ccss17/dotfiles-clionly
