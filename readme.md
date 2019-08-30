@@ -1,6 +1,6 @@
 # dotfiles 
 
-Desktop environment configuration files for my Archlinux
+Desktop environment configuration files for my **Archlinux**
 
 ## list
 
