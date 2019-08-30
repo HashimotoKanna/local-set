@@ -38,15 +38,15 @@ Desktop environment configuration files for my Archlinux
 
   - start a terminal
 
-```
-bindsym $mod+Return exec alacritty
-```
+    ```
+    bindsym $mod+Return exec alacritty
+    ```
 
   - kill focused window
 
-```
-bindsym $mod+q kill
-```
+    ```
+    bindsym $mod+q kill
+    ```
 
   - start rofi
 
