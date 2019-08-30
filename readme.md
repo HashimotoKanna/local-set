@@ -92,23 +92,22 @@ Desktop environment configuration files for my Archlinux
     bindsym --whole-window button8 fullscreen toggle
     ```
 
-  - i3-gaps setting
+- i3-gaps setting
 
-    ```
-    for_window [class=".*"] border pixel 0
-    gaps inner 4
-    ```
+```
+for_window [class=".*"] border pixel 0
+gaps inner 4
+```
 
-  - auto start 
+- auto start 
 
-    ```
-    exec --no-startup-id nm-applet # Network Manager for auto WiFi connection
-    exec --no-startup-id blueberry-tray # bluetooth manager for auto Blutooth connection
-    exec --no-startup-id /usr/lib/blueberry/blueberry-obex-agent.py
-    exec --no-startup-id xrdb ~/.Xresources
-    exec --no-startup-id watch -n 3600 feh --randomize --bg-fill ~/Pictures/wallpaper-home/* # for wallpaper
-    exec --no-startup-id ~/.config/polybar/start.sh # start polybar 
-    exec --no-startup-id compton --config ~/.config/compton/compton.conf # start compton
-    exec --no-startup-id ~/.dropbox-dist/dropboxd # start dropbox
-# exec --no-startup-id google-chrome-beta # auto start chrome, but I don't use it now
-    ```
+```
+exec --no-startup-id nm-applet # Network Manager for auto WiFi connection
+exec --no-startup-id blueberry-tray # bluetooth manager for auto Blutooth connection
+exec --no-startup-id /usr/lib/blueberry/blueberry-obex-agent.py
+exec --no-startup-id xrdb ~/.Xresources
+exec --no-startup-id watch -n 3600 feh --randomize --bg-fill ~/Pictures/wallpaper-home/* # for wallpaper
+exec --no-startup-id ~/.config/polybar/start.sh # start polybar 
+exec --no-startup-id compton --config ~/.config/compton/compton.conf # start compton
+exec --no-startup-id ~/.dropbox-dist/dropboxd # start dropbox
+```
