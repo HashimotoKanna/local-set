@@ -2,7 +2,7 @@
 
 cp _xprofile ~/.xprofile
 cp _Xresources ~/.Xresource
-cp _Xresources.d ~ -r
+cp _Xresources.d ~/.Xresource.d -r
 cp bg/ ~/Pictures/wallpaper-home -r
 cp _config/alacritty ~/.config -r 
 cp _config/compton ~/.config -r 
