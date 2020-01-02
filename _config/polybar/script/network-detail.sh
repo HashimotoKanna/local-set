@@ -17,7 +17,6 @@ print_bytes() {
 }
 
 INTERVAL=3
-INTERFACES="wlo1" 
 PUBLIC_IP=$(curl -s ipinfo.io | jq '.ip' | cut -d"\"" -f2 2> /dev/null)
 LOCATION=$(curl -s ipinfo.io | jq '.city' | cut -d"\"" -f2 2> /dev/null)
 GATEWAY_IP=$(ip route | awk '/default/ {print $3}')

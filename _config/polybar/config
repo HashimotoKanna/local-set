@@ -288,7 +288,7 @@ label-disconnected =
 
 [module/wifi]
 type = internal/network
-interface = wlo1
+interface = ${env:INTERFACES:}
 interval = 5
 ping-interval = 5
 format-connected = <label-connected>
