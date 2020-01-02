@@ -5,7 +5,6 @@ configuration {
 /*	columns: 1;*/
 	/*font: "Droid Sans 12";*/
 	font: "Inconsolata 15";
-    theme: "onedark";
     theme: "material";
 /*	bw: 1;*/
 /*	location: 0;*/

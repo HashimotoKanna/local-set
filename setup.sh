@@ -10,5 +10,4 @@ cp _config/i3 ~/.config -r
 cp _config/polybar ~/.config -r 
 cp _config/rofi ~/.config -r 
 cp _cache/wal ~/.cache -r 
-sudo cp _usr/share/rofi/themes/onedark.rasi /usr/share/rofi/themes/
-
+sudo cp _usr/share/rofi/themes/material.rasi /usr/share/rofi/themes/
