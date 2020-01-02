@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/chansol0505/Pictures/sana.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0a0d0f",
+        "foreground": "#ecdcd1",
+        "cursor": "#ecdcd1"
+    },
+    "colors": {
+        "color0": "#0a0d0f",
+        "color1": "#B2494D",
+        "color2": "#946E65",
+        "color3": "#CD9D63",
+        "color4": "#8D7289",
+        "color5": "#A59190",
+        "color6": "#D8AC97",
+        "color7": "#ecdcd1",
+        "color8": "#a59a92",
+        "color9": "#B2494D",
+        "color10": "#946E65",
+        "color11": "#CD9D63",
+        "color12": "#8D7289",
+        "color13": "#A59190",
+        "color14": "#D8AC97",
+        "color15": "#ecdcd1"
+    }
+}
