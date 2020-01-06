@@ -33,17 +33,21 @@ while true; do
     up=0
 
     for interface in $INTERFACES; do
-        bytes[now_rx_$interface]="$(cat /sys/class/net/"$interface"/statistics/rx_bytes)"
-        bytes[now_tx_$interface]="$(cat /sys/class/net/"$interface"/statistics/tx_bytes)"
+        rx_bytes_file="/sys/class/net/$interface/statistics/rx_bytes"
+        tx_bytes_file="/sys/class/net/$interface/statistics/tx_bytes"
+        if [ -f $rx_bytes_file ]; then
+            bytes[now_rx_$interface]="$(cat /sys/class/net/"$interface"/statistics/rx_bytes)"
+            bytes[now_tx_$interface]="$(cat /sys/class/net/"$interface"/statistics/tx_bytes)"
 
-        bytes_down=$((((${bytes[now_rx_$interface]} - ${bytes[past_rx_$interface]})) / INTERVAL))
-        bytes_up=$((((${bytes[now_tx_$interface]} - ${bytes[past_tx_$interface]})) / INTERVAL))
+            bytes_down=$((((${bytes[now_rx_$interface]} - ${bytes[past_rx_$interface]})) / INTERVAL))
+            bytes_up=$((((${bytes[now_tx_$interface]} - ${bytes[past_tx_$interface]})) / INTERVAL))
 
-        down=$(((( "$down" + "$bytes_down" ))))
-        up=$(((( "$up" + "$bytes_up" ))))
+            down=$(((( "$down" + "$bytes_down" ))))
+            up=$(((( "$up" + "$bytes_up" ))))
 
-        bytes[past_rx_$interface]=${bytes[now_rx_$interface]}
-        bytes[past_tx_$interface]=${bytes[now_tx_$interface]}
+            bytes[past_rx_$interface]=${bytes[now_rx_$interface]}
+            bytes[past_tx_$interface]=${bytes[now_tx_$interface]}
+        fi
     done
 
     GATEWAY_IP_TMP=$(ip route | grep default | cut -d ' ' -f 3)

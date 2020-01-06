@@ -469,7 +469,6 @@ tail = true
 [module/filesystem]
 type = internal/fs
 mount-0 = /
-mount-1 = /home
 interval = 60
 fixed-values = true
 spacing = 2

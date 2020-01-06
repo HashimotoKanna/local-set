@@ -1,7 +1,5 @@
 #!/bin/bash
-killall -q polybar
 source ~/.cache/wal/colors.sh
-source ~/.zshrc
 export color0_alpha="#aa${color0/'#'}"
 
 f()
