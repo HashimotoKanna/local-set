@@ -288,7 +288,7 @@ label-disconnected =
 
 [module/wifi]
 type = internal/network
-interface = ${env:INTERFACES:}
+interface = wlo1
 interval = 5
 ping-interval = 5
 format-connected = <label-connected>
@@ -352,6 +352,8 @@ label = %{A1:gsimplecal &:}%output%%{A}
 type = internal/xbacklight
 format = <ramp> <label>
 label = %{A1:~/.config/polybar/script/backlight.sh:}%{A5:xbacklight -dec:}%{A4:xbacklight -inc:}%{A3:xbacklight -set 50:}%percentage:2:3%%%{A}%{A}%{A}%{A}%{A}%{A}%{A}
+; label = 
+; %{A1:~/.config/polybar/script/backlight.sh:}%{A5:xbacklight -dec:}%{A4:xbacklight -inc:}%{A3:xbacklight -set 50:}%percentage:2:3%%%{A}%{A}%{A}%{A}%{A}%{A}%{A}
 format-foreground = ${colors.cyan}
 label-foreground = ${colors.white}
 ramp-0 = 🌕
@@ -469,6 +471,7 @@ tail = true
 [module/filesystem]
 type = internal/fs
 mount-0 = /
+mount-1 = /home
 interval = 60
 fixed-values = true
 spacing = 2

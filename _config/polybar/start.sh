@@ -1,7 +1,6 @@
 #!/bin/bash
 killall -q polybar
 source ~/.cache/wal/colors.sh
-source ~/.zshrc
 export color0_alpha="#aa${color0/'#'}"
 
 f()
@@ -19,10 +18,12 @@ f()
     fi
     for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
         if [[ $m == "eDP1" ]]; then
+            echo $m $eDP1_TOP_ARG
             MONITOR=$m polybar --reload $eDP1_TOP_ARG &
             MONITOR=$m polybar --reload $eDP1_BOTTOM_ARG &
         fi
         if [[ $m == "HDMI2" ]]; then
+            echo $m $HDMI2_TOP_ARG
             MONITOR=$m polybar --reload $HDMI2_TOP_ARG &
             MONITOR=$m polybar --reload $HDMI2_BOTTOM_ARG &
         fi

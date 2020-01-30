@@ -1,19 +1,22 @@
 #!/bin/bash
 
-# sessions="$(lsof -Pi | grep ":22")" # to show domain
-sessions="$(lsof -i :22 -n)" # to show ip
+FILTER="([a-zA-Z0-9]+@([0-9]{1,3}\.){3}[0-9]{1,3}|[a-zA-Z0-9]+@[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,})"
 
-if [ -n "$sessions" ]; then
-    count=$(($(echo "$sessions" | wc -l)-1))
-    result="%{F#30a9de}%{F-} %{F#0f0}($count)%{F-}%{F#0ff} %{F-}"
-    #result="%{F#30a9de}%{F-} $count%{F#0ff}/ %{F-}"
-    for i in $(echo "$sessions" | cut -d ">" -f 2 | cut -d " " -f 1 | cut -d ":" -f 1)
-    do
-        if [ $i != "COMMAND" ]; then
-            result=$result$i"%{F#0ff}/ %{F-}"
-        fi
-    done
-    echo $result
-else
+sessions=""
+count=0
+while read -r line;do
+    if [[ $(echo $line | cut -d' ' -f8) == "ssh" ]]; then
+        tmp=$(grep -o -E $FILTER <<< $line)
+        user=$(echo $tmp | cut -d'@' -f1)
+        domain=$(echo $tmp | cut -d'@' -f2)
+        sessions=$sessions"%{F#fff}$user%{F-}%{F#81a2be}@%{F-}%{F#0f0}$domain%{F-}%{F#0ff}/ %{F-}"
+        count=`expr $count + 1`
+    fi
+done <<< "$(ps -ef | grep ssh)"
+
+if [[ $count == 0 ]]; then
     echo ""
+else
+    result="%{F#30a9de}%{F-}%{F#0ff} %{F-}"
+    echo $result$sessions
 fi
