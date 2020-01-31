@@ -1,7 +1,8 @@
-![2020-01-31-020523_1920x1080_scrot](https://user-images.githubusercontent.com/16812446/73472338-39301d80-43ce-11ea-9565-82c6da03eb75.png)
-
-
 # dotfiles 
+
+![2020-01-31-171749_3840x2160_scrot](https://user-images.githubusercontent.com/16812446/73523207-aa62e580-444d-11ea-9ed6-6e82ab536bf2.png)
+
+![2020-01-31-020523_1920x1080_scrot](https://user-images.githubusercontent.com/16812446/73472338-39301d80-43ce-11ea-9565-82c6da03eb75.png)
 
 Desktop environment configuration files for my **Archlinux**
 
