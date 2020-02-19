@@ -270,25 +270,26 @@ label-urgent-padding = ${self.label-focused-padding}
 
 [module/xwindow]
 type = internal/xwindow
-label = %{A1:rofi -width 27 -show window:}%title:0:55:...%%{A}
+label = %{A1:rofi -width 27 -show window:}%title:0:85:...%%{A}
 ; label-underline = #feee7d
 
 [module/eth]
 type = internal/network
-interface = enp1s0f1
+interface = enp4s0
 interval = 3
 format-connected = <label-connected>
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 format-disconnected = <label-disconnected>
-label-connected = %{A1:nmcli-rofi:}%downspeed%%{A}
+label-connected = %ifname%%{F#81A2BE} %local_ip%
 label-connected-foreground = ${colors.foreground}
-label-disconnected = 
+label-disconnected = N/A
+label-disconnected-foreground = #f00
 ;format-connected-padding = 1
 
 [module/wifi]
 type = internal/network
-interface = wlo1
+interface = ${env:INTERFACES:}
 interval = 5
 ping-interval = 5
 format-connected = <label-connected>
@@ -352,8 +353,6 @@ label = %{A1:gsimplecal &:}%output%%{A}
 type = internal/xbacklight
 format = <ramp> <label>
 label = %{A1:~/.config/polybar/script/backlight.sh:}%{A5:xbacklight -dec:}%{A4:xbacklight -inc:}%{A3:xbacklight -set 50:}%percentage:2:3%%%{A}%{A}%{A}%{A}%{A}%{A}%{A}
-; label = 
-; %{A1:~/.config/polybar/script/backlight.sh:}%{A5:xbacklight -dec:}%{A4:xbacklight -inc:}%{A3:xbacklight -set 50:}%percentage:2:3%%%{A}%{A}%{A}%{A}%{A}%{A}%{A}
 format-foreground = ${colors.cyan}
 label-foreground = ${colors.white}
 ramp-0 = 🌕
@@ -471,7 +470,6 @@ tail = true
 [module/filesystem]
 type = internal/fs
 mount-0 = /
-mount-1 = /home
 interval = 60
 fixed-values = true
 spacing = 2
