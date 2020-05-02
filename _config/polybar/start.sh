@@ -17,6 +17,11 @@ f()
         HDMI2_BOTTOM_ARG="bottom-small"
     fi
     for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+        if [[ $m == "eDP-1" ]]; then
+            echo $m $eDP1_TOP_ARG
+            MONITOR=$m polybar --reload $eDP1_TOP_ARG &
+            MONITOR=$m polybar --reload $eDP1_BOTTOM_ARG &
+        fi
         if [[ $m == "eDP1" ]]; then
             echo $m $eDP1_TOP_ARG
             MONITOR=$m polybar --reload $eDP1_TOP_ARG &

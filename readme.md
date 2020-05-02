@@ -1,10 +1,28 @@
 # dotfiles 
 
+Desktop environment configuration files for my **Archlinux**
+
 ![2020-01-31-171749_3840x2160_scrot](https://user-images.githubusercontent.com/16812446/73523207-aa62e580-444d-11ea-9ed6-6e82ab536bf2.png)
 
 ![2020-01-31-020523_1920x1080_scrot](https://user-images.githubusercontent.com/16812446/73472338-39301d80-43ce-11ea-9565-82c6da03eb75.png)
 
-Desktop environment configuration files for my **Archlinux**
+### Top-Right IP
+
+![](2.png)
+
+This is local(private) IP.
+
+### Bottom-Right IP
+
+![](1.png)
+
+The right one are the gateway IP and network IP in order.
+
+### Bottom-Left IP(or host)
+
+![](3.png)
+
+This is ssh connection information in USER@HOST format.
 
 ## list
 
