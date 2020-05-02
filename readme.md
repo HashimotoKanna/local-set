@@ -6,21 +6,23 @@ Desktop environment configuration files for my **Archlinux**
 
 ![2020-01-31-020523_1920x1080_scrot](https://user-images.githubusercontent.com/16812446/73472338-39301d80-43ce-11ea-9565-82c6da03eb75.png)
 
+![4](https://user-images.githubusercontent.com/16812446/80850130-58e91300-8c55-11ea-9483-407c17e488f3.png)
+
 ### Top-Right IP
 
-![](2.png)
+![2](https://user-images.githubusercontent.com/16812446/80850105-3e169e80-8c55-11ea-9a54-6442d4a4e2d0.png)
 
 This is local(private) IP.
 
 ### Bottom-Right IP
 
-![](1.png)
+![1](https://user-images.githubusercontent.com/16812446/80850109-48389d00-8c55-11ea-87c8-875221c53825.png)
 
 The right one are the gateway IP and network IP in order.
 
 ### Bottom-Left IP(or host)
 
-![](3.png)
+![3](https://user-images.githubusercontent.com/16812446/80850125-4ff84180-8c55-11ea-9d65-c1ecb1730fb8.png)
 
 This is ssh connection information in USER@HOST format.
 
